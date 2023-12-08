@@ -13,8 +13,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
       {/* begin::Header */}
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bold fs-3 mb-1'>Tasks Overview</span>
-          <span className='text-muted fw-semibold fs-7'>Pending 10 tasks</span>
+          <span className='card-label fw-bold fs-3 mb-1'>Hardskills Evaluation</span>
         </h3>
         <div className='card-toolbar'>
           {/* begin::Menu */}
@@ -57,7 +56,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/svg/brand-logos/plurk.svg')}
+                        src={toAbsoluteUrl('/media/capricorn/python.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -66,9 +65,9 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    Top Authors
+                    Python
                   </a>
-                  <span className='text-muted fw-semibold d-block fs-7'>Successful Fellas</span>
+                  {/* <span className='text-muted fw-semibold d-block fs-7'>Successful Fellas</span> */}
                 </td>
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
@@ -95,7 +94,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/svg/brand-logos/telegram.svg')}
+                        src={toAbsoluteUrl('/media/capricorn/c.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -104,9 +103,9 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    Popular Authors
+                    C
                   </a>
-                  <span className='text-muted fw-semibold d-block fs-7'>Most Successful</span>
+                  {/* <span className='text-muted fw-semibold d-block fs-7'>Most Successful</span> */}
                 </td>
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
@@ -133,7 +132,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/svg/brand-logos/vimeo.svg')}
+                        src={toAbsoluteUrl('/media/capricorn/javascript.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -142,9 +141,9 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    New Users
+                    Javascript
                   </a>
-                  <span className='text-muted fw-semibold d-block fs-7'>Awesome Users</span>
+                  {/* <span className='text-muted fw-semibold d-block fs-7'>Awesome Users</span> */}
                 </td>
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
@@ -171,7 +170,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/svg/brand-logos/bebo.svg')}
+                        src={toAbsoluteUrl('/media/capricorn/react.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -180,9 +179,9 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    Active Customers
+                    React JS
                   </a>
-                  <span className='text-muted fw-semibold d-block fs-7'>Best Customers</span>
+                  {/* <span className='text-muted fw-semibold d-block fs-7'>Best Customers</span> */}
                 </td>
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
@@ -209,7 +208,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/svg/brand-logos/kickstarter.svg')}
+                        src={toAbsoluteUrl('/media/capricorn/postgres.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -218,9 +217,9 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    Bestseller Theme
+                    SQL
                   </a>
-                  <span className='text-muted fw-semibold d-block fs-7'>Amazing Templates</span>
+                  {/* <span className='text-muted fw-semibold d-block fs-7'>Amazing Templates</span> */}
                 </td>
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
