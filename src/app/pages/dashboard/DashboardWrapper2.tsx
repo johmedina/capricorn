@@ -37,6 +37,14 @@ const DashboardPage = () => {
           <TablesWidget15 className='card-xxl-stretch mb-5 mb-xxl-8' headerName="Current Evaluations"/>
         </div>
         {/* end::Col */}
+        <a
+          href='#'
+          className='btn btn-l btn-primary'
+          data-bs-toggle='modal'
+          data-bs-target='#kt_modal_offer_a_deal'
+        >
+          New Evaluation
+        </a>
       </div>
       {/* end::Row */}
     </>

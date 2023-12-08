@@ -7,6 +7,35 @@ type Props = {
   headerName?: string
 }
 
+const table_rows = [
+  {
+    title: "Software Engineer",
+    date: "11/11/2022",
+    skills: ["Python", "OpenAI", "PHP"],
+    status: "Pending",
+    iconStatus: "success",
+    topCandidate: "Alvena Alvena",
+    candidateAccuracy: "80%"
+  },
+  {
+    title: "Scientist",
+    date: "11/11/2022",
+    skills: ["Research", "Databases"],
+    status: "Accepted",
+    iconStatus: "primary",
+    topCandidate: "Max Meyer",
+    candidateAccuracy: "89%"
+  },
+  {
+    title: "Research Assistant",
+    date: "01/12/2023",
+    skills: ["Python", "React", "TypeScript"],
+    status: "Rejected",
+    iconStatus: "danger",
+    topCandidate: "John Sharp",
+    candidateAccuracy: "56%"
+  }
+]
 const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
   return (
     <div className={`card ${className}`}>
@@ -14,7 +43,7 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bold fs-3 mb-1'>{headerName}</span>
-          <span className='text-muted mt-1 fw-semibold fs-7'>More than 400 new products</span>
+          <span className='text-muted mt-1 fw-semibold fs-7'>{table_rows.length} results</span>
         </h3>
         <div className='card-toolbar'>
           <ul className='nav'>
@@ -22,7 +51,7 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
               <a
                 className='nav-link btn btn-sm btn-color-muted btn-active btn-active-light-primary active fw-bold px-4 me-1'
                 data-bs-toggle='tab'
-                href='#kt_table_widget_5_tab_1'
+                href='#kt_table_widget_14_tab_1'
               >
                 Month
               </a>
@@ -31,7 +60,7 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
               <a
                 className='nav-link btn btn-sm btn-color-muted btn-active btn-active-light-primary fw-bold px-4 me-1'
                 data-bs-toggle='tab'
-                href='#kt_table_widget_5_tab_2'
+                href='#kt_table_widget_14_tab_2'
               >
                 Week
               </a>
@@ -40,7 +69,7 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
               <a
                 className='nav-link btn btn-sm btn-color-muted btn-active btn-active-light-primary fw-bold px-4'
                 data-bs-toggle='tab'
-                href='#kt_table_widget_5_tab_3'
+                href='#kt_table_widget_14_tab_3'
               >
                 Day
               </a>
@@ -50,10 +79,10 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
       </div>
       {/* end::Header */}
       {/* begin::Body */}
-      <div className='card-body py-3'>
+      <div className='card-body py-4'>
         <div className='tab-content'>
           {/* begin::Tap pane */}
-          <div className='tab-pane fade show active' id='kt_table_widget_5_tab_1'>
+          <div className='tab-pane fade show active' id='kt_table_widget_14_tab_1'>
             {/* begin::Table container */}
             <div className='table-responsive'>
               {/* begin::Table */}
@@ -71,12 +100,12 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
                 {/* end::Table head */}
                 {/* begin::Table body */}
                 <tbody>
-                  <tr>
+                  {table_rows.map(val => <tr>
                     <td>
                       <div className='symbol symbol-45px me-2'>
                         <span className='symbol-label'>
                           <img
-                            src={toAbsoluteUrl('/media/svg/brand-logos/plurk.svg')}
+                            src={toAbsoluteUrl('/media/svg/brand-logos/shell.svg')}
                             className='h-50 align-self-center'
                             alt=''
                           />
@@ -85,13 +114,26 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
                     </td>
                     <td>
                       <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                        Research Assistant Role
+                        {val.title}
                       </a>
-                      <span className='text-muted fw-semibold d-block'>23/10/2020</span>
+                      <span className='text-muted fw-semibold d-block'>{val.date}</span>
                     </td>
-                    <td className='text-end text-muted fw-semibold'>React, HTML</td>
+                    <td className='text-end text-muted fw-semibold'>{val.skills.join(", ")}</td>
+                    
                     <td className='text-end'>
-                      <span className='badge badge-light-success'>Approved</span>
+                      <span className={'badge badge-light-' + val.iconStatus}>{val.status}</span>
+                    </td>
+                    <td className='text-end text-muted fw-semibold'>{val.topCandidate}</td>
+                    <td className='text-end text-muted fw-semibold'>
+                    <span className='fw-bolder fs-6'>{val.candidateAccuracy}</span>
+                    <div className='h-5px mx-3 w-100 bg-light mb-3'>
+                    
+                  <div
+                    className={'bg-' + val.iconStatus +  ' rounded h-5px'}
+                    role='progressbar'
+                    style={{width: val.candidateAccuracy}}
+                  ></div>
+                </div>
                     </td>
                     <td className='text-end'>
                       <a
@@ -102,7 +144,8 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
                       </a>
                     </td>
                   </tr>
-                  <tr>
+                  )}
+                  {/* <tr>
                     <td>
                       <div className='symbol symbol-45px me-2'>
                         <span className='symbol-label'>
@@ -116,7 +159,7 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
                     </td>
                     <td>
                       <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                        Scientist
+                      Senior Software Engineer
                       </a>
                       <span className='text-muted fw-semibold d-block'>11/11/2022</span>
                     </td>
@@ -163,7 +206,7 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
                         <KTIcon iconName='arrow-right' className='fs-2' />
                       </a>
                     </td>
-                  </tr>
+                  </tr> */}
                   
                 </tbody>
                 {/* end::Table body */}
@@ -173,7 +216,7 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
           </div>
           {/* end::Tap pane */}
           {/* begin::Tap pane */}
-          <div className='tab-pane fade' id='kt_table_widget_5_tab_2'>
+          <div className='tab-pane fade' id='kt_table_widget_14_tab_2'>
             {/* begin::Table container */}
             <div className='table-responsive'>
               {/* begin::Table */}
@@ -292,7 +335,7 @@ const TablesWidget5: React.FC<Props> = ({className, headerName}) => {
           </div>
           {/* end::Tap pane */}
           {/* begin::Tap pane */}
-          <div className='tab-pane fade' id='kt_table_widget_5_tab_3'>
+          <div className='tab-pane fade' id='kt_table_widget_14_tab_3'>
             {/* begin::Table container */}
             <div className='table-responsive'>
               {/* begin::Table */}

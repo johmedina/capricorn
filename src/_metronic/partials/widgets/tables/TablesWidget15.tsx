@@ -7,6 +7,24 @@ type Props = {
   headerName?: string
 }
 
+const table_rows = [
+  {
+    title: "Software Engineer",
+    date: "11/11/2022",
+    skills: ["Python", "OpenAI", "PHP"],
+    status: "In Progress",
+    iconStatus: "warning",
+    numCandidates: "4 candidates"
+  },
+  {
+    title: "Research Associate",
+    date: "24/11/2023",
+    skills: ["Web Development", "Research"],
+    status: "New",
+    iconStatus: "success",
+    numCandidates: "2 candidates"
+  }
+]
 const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
   return (
     <div className={`card ${className}`}>
@@ -14,7 +32,7 @@ const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
           <span className='card-label fw-bold fs-3 mb-1'>{headerName}</span>
-          <span className='text-muted mt-1 fw-semibold fs-7'>More than 400 new products</span>
+          <span className='text-muted mt-1 fw-semibold fs-7'>{table_rows.length} results</span>
         </h3>
         <div className='card-toolbar'>
           <ul className='nav'>
@@ -71,12 +89,12 @@ const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
                 {/* end::Table head */}
                 {/* begin::Table body */}
                 <tbody>
-                  <tr>
+                  {table_rows.map(val => <tr>
                     <td>
                       <div className='symbol symbol-45px me-2'>
                         <span className='symbol-label'>
                           <img
-                            src={toAbsoluteUrl('/media/svg/brand-logos/plurk.svg')}
+                            src={toAbsoluteUrl('/media/svg/brand-logos/shell.svg')}
                             className='h-50 align-self-center'
                             alt=''
                           />
@@ -85,14 +103,18 @@ const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
                     </td>
                     <td>
                       <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                        Software Engineer
+                        {val.title}
                       </a>
-                      <span className='text-muted fw-semibold d-block'>02/12/2023</span>
+                      <span className='text-muted fw-semibold d-block'>{val.date}</span>
                     </td>
-                    <td className='text-end text-muted fw-semibold'>Python, Laravel, Azure</td>
+                    <td className='text-end text-muted fw-semibold'>{val.skills.join(", ")}</td>
+                    
                     <td className='text-end'>
-                      <span className='badge badge-light-success'>Approved</span>
+                      <span className={'badge badge-light-' + val.iconStatus}>{val.status}</span>
                     </td>
+                    <td className='text-end text-muted fw-semibold'>{val.numCandidates}</td>
+                    <td className='text-end text-muted fw-semibold'></td>
+                    <td className='text-end'></td>
                     <td className='text-end'>
                       <a
                         href='#'
@@ -101,7 +123,9 @@ const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
                         <KTIcon iconName='arrow-right' className='fs-2' />
                       </a>
                     </td>
+                    
                   </tr>
+                  )}
                   {/* <tr>
                     <td>
                       <div className='symbol symbol-45px me-2'>
