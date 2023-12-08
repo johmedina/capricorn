@@ -56,7 +56,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/python.png')}
+                        src={toAbsoluteUrl('/media/capricorn/angular.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -65,7 +65,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    Python
+                    Angular
                   </a>
                   {/* <span className='text-muted fw-semibold d-block fs-7'>Successful Fellas</span> */}
                 </td>
@@ -94,7 +94,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/c.png')}
+                        src={toAbsoluteUrl('/media/capricorn/netcore.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -103,7 +103,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    C
+                    .Net Core
                   </a>
                   {/* <span className='text-muted fw-semibold d-block fs-7'>Most Successful</span> */}
                 </td>
@@ -132,7 +132,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/javascript.png')}
+                        src={toAbsoluteUrl('/media/capricorn/csharp.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -141,7 +141,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    Javascript
+                    C#
                   </a>
                   {/* <span className='text-muted fw-semibold d-block fs-7'>Awesome Users</span> */}
                 </td>
@@ -170,7 +170,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/react.png')}
+                        src={toAbsoluteUrl('/media/capricorn/SignalR-logo.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -179,7 +179,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    React JS
+                    SignalR
                   </a>
                   {/* <span className='text-muted fw-semibold d-block fs-7'>Best Customers</span> */}
                 </td>
@@ -208,7 +208,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/postgres.png')}
+                        src={toAbsoluteUrl('/media/capricorn/typescript.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -217,7 +217,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    SQL
+                    Typescript
                   </a>
                   {/* <span className='text-muted fw-semibold d-block fs-7'>Amazing Templates</span> */}
                 </td>
