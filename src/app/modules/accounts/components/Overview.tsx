@@ -8,6 +8,7 @@ import {
   TablesWidget1,
   TablesWidget5,
 } from '../../../../_metronic/partials/widgets'
+import { TablesWidget14 } from '../../../../_metronic/partials/widgets/tables/TablesWidget14'
 
 export function Overview() {
   return (
@@ -33,10 +34,10 @@ export function Overview() {
           </div>
 
           <div className='row mb-7'>
-            <label className='col-lg-4 fw-bold text-muted'>Company</label>
+            <label className='col-lg-4 fw-bold text-muted'>Target Role</label>
 
             <div className='col-lg-8 fv-row'>
-              <span className='fw-bold fs-6'>Capricorn</span>
+              <span className='fw-bold fs-6'>Research Associate</span>
             </div>
           </div>
 
@@ -51,18 +52,18 @@ export function Overview() {
             </label>
 
             <div className='col-lg-8 d-flex align-items-center'>
-              <span className='fw-bolder fs-6 me-2'>044 3276 454 935</span>
+              <span className='fw-bolder fs-6 me-2'>+974 6690 6873</span>
 
               <span className='badge badge-success'>Verified</span>
             </div>
           </div>
 
           <div className='row mb-7'>
-            <label className='col-lg-4 fw-bold text-muted'>Company Site</label>
+            <label className='col-lg-4 fw-bold text-muted'>LinkedIn Profile</label>
 
             <div className='col-lg-8'>
               <a href='#' className='fw-bold fs-6 text-dark text-hover-primary'>
-                Capricorn.com
+                keenthemes.com
               </a>
             </div>
           </div>
@@ -78,7 +79,7 @@ export function Overview() {
             </label>
 
             <div className='col-lg-8'>
-              <span className='fw-bolder fs-6 text-dark'>Germany</span>
+              <span className='fw-bolder fs-6 text-dark'>Qatar</span>
             </div>
           </div>
 
@@ -98,7 +99,7 @@ export function Overview() {
             </div>
           </div>
 
-          <div className='notice d-flex bg-light-warning rounded border-warning border border-dashed p-6'>
+          {/* <div className='notice d-flex bg-light-warning rounded border-warning border border-dashed p-6'>
             <KTIcon iconName='information-5' className='fs-2tx text-warning me-4' />
             <div className='d-flex flex-stack flex-grow-1'>
               <div className='fw-bold'>
@@ -113,16 +114,16 @@ export function Overview() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
       <div className='row gy-10 gx-xl-10'>
-        <div className='col-xl-6'>
+        {/* <div className='col-xl-6'>
           <ChartsWidget1 className='card-xxl-stretch mb-5 mb-xl-10' />
-        </div>
+        </div> */}
 
-        <div className='col-xl-6'>
+        <div className='col-xl-12'>
           <TablesWidget1 className='card-xxl-stretch mb-5 mb-xl-10' />
         </div>
       </div>
@@ -133,7 +134,7 @@ export function Overview() {
         </div>
 
         <div className='col-xl-6'>
-          <TablesWidget5 className='card-xxl-stretch mb-5 mb-xl-10' />
+          <TablesWidget14 className='card-xxl-stretch mb-5 mb-xl-10' />
         </div>
       </div>
     </>
