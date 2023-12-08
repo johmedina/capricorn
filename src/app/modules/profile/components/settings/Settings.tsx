@@ -235,7 +235,7 @@ export function Settings() {
           <div className='row'>
             <label className='col-xl-3'></label>
             <div className='col-lg-9 col-xl-6'>
-              <h5 className='fw-bold mb-6'>Updates From Keenthemes:</h5>
+              <h5 className='fw-bold mb-6'>Updates From Capricorn:</h5>
             </div>
           </div>
 
@@ -249,18 +249,18 @@ export function Settings() {
                   className='form-check-input'
                   type='checkbox'
                   id='kt_checkbox_7'
-                  checked={data.updatesFromKeenthemes.newsAboutKTProducts}
+                  checked={data.updatesFromCapricorn.newsAboutKTProducts}
                   onChange={() =>
                     updateData({
-                      updatesFromKeenthemes: {
-                        ...data.updatesFromKeenthemes,
-                        newsAboutKTProducts: !data.updatesFromKeenthemes.newsAboutKTProducts,
+                      updatesFromCapricorn: {
+                        ...data.updatesFromCapricorn,
+                        newsAboutKTProducts: !data.updatesFromCapricorn.newsAboutKTProducts,
                       },
                     })
                   }
                 />
                 <label className='form-check-label fw-bold text-gray-600' htmlFor='kt_checkbox_7'>
-                  News about Keenthemes products and feature updates
+                  News about Capricorn products and feature updates
                 </label>
               </div>
               <div className='form-check form-check-custom form-check-solid mb-3'>
@@ -268,12 +268,12 @@ export function Settings() {
                   className='form-check-input'
                   type='checkbox'
                   id='kt_checkbox_8'
-                  checked={data.updatesFromKeenthemes.tipsOnGettingMore}
+                  checked={data.updatesFromCapricorn.tipsOnGettingMore}
                   onChange={() =>
                     updateData({
-                      updatesFromKeenthemes: {
-                        ...data.updatesFromKeenthemes,
-                        tipsOnGettingMore: !data.updatesFromKeenthemes.tipsOnGettingMore,
+                      updatesFromCapricorn: {
+                        ...data.updatesFromCapricorn,
+                        tipsOnGettingMore: !data.updatesFromCapricorn.tipsOnGettingMore,
                       },
                     })
                   }
@@ -287,12 +287,12 @@ export function Settings() {
                   className='form-check-input'
                   type='checkbox'
                   id='kt_checkbox_9'
-                  checked={data.updatesFromKeenthemes.thingsYouMissed}
+                  checked={data.updatesFromCapricorn.thingsYouMissed}
                   onChange={() =>
                     updateData({
-                      updatesFromKeenthemes: {
-                        ...data.updatesFromKeenthemes,
-                        tipsOnGettingMore: !data.updatesFromKeenthemes.thingsYouMissed,
+                      updatesFromCapricorn: {
+                        ...data.updatesFromCapricorn,
+                        tipsOnGettingMore: !data.updatesFromCapricorn.thingsYouMissed,
                       },
                     })
                   }
@@ -306,18 +306,18 @@ export function Settings() {
                   className='form-check-input'
                   type='checkbox'
                   id='kt_checkbox_10'
-                  checked={data.updatesFromKeenthemes.newsAboutKTPartners}
+                  checked={data.updatesFromCapricorn.newsAboutKTPartners}
                   onChange={() =>
                     updateData({
-                      updatesFromKeenthemes: {
-                        ...data.updatesFromKeenthemes,
-                        newsAboutKTPartners: !data.updatesFromKeenthemes.newsAboutKTPartners,
+                      updatesFromCapricorn: {
+                        ...data.updatesFromCapricorn,
+                        newsAboutKTPartners: !data.updatesFromCapricorn.newsAboutKTPartners,
                       },
                     })
                   }
                 />
                 <label className='form-check-label fw-bold text-gray-600' htmlFor='kt_checkbox_10'>
-                  News about Keenthemes on partner products and other services
+                  News about Capricorn on partner products and other services
                 </label>
               </div>
             </div>

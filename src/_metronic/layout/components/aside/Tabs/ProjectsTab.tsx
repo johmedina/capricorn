@@ -16,7 +16,7 @@ const projects: ReadonlyArray<{image: string; title: string; link: string}> = [
   {
     image: '/media/svg/brand-logos/kickstarter.svg',
     title: 'KC Account CRM',
-    link: 'By Keenthemes',
+    link: 'By Capricorn',
   },
   {
     image: '/media/svg/brand-logos/balloon.svg',

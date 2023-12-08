@@ -22,32 +22,24 @@ export function AsideMenuMain() {
       </div>
       <AsideMenuItemWithSub
         to='/crafted/pages'
-        title='Pages'
+        title='Evaluations'
         fontIcon='bi-archive'
         icon='element-plus'
       >
-        <AsideMenuItemWithSub to='/crafted/pages/profile' title='Profile' hasBullet={true}>
-          <AsideMenuItem to='/crafted/pages/profile/overview' title='Overview' hasBullet={true} />
-          <AsideMenuItem to='/crafted/pages/profile/projects' title='Projects' hasBullet={true} />
-          <AsideMenuItem to='/crafted/pages/profile/campaigns' title='Campaigns' hasBullet={true} />
-          <AsideMenuItem to='/crafted/pages/profile/documents' title='Documents' hasBullet={true} />
-          <AsideMenuItem
-            to='/crafted/pages/profile/connections'
-            title='Connections'
-            hasBullet={true}
-          />
-        </AsideMenuItemWithSub>
+        <AsideMenuItem to='/crafted/pages/wizards' title='Current Evaluations' hasBullet={true}>
+        </AsideMenuItem>
 
-        <AsideMenuItemWithSub to='/crafted/pages/wizards' title='Wizards' hasBullet={true}>
-          <AsideMenuItem
-            to='/crafted/pages/wizards/horizontal'
-            title='Horizontal'
-            hasBullet={true}
-          />
-          <AsideMenuItem to='/crafted/pages/wizards/vertical' title='Vertical' hasBullet={true} />
-        </AsideMenuItemWithSub>
+        <AsideMenuItem to='/crafted/pages/wizards' title='Previous Evaluations' hasBullet={true}>
+        </AsideMenuItem>
       </AsideMenuItemWithSub>
-      <AsideMenuItemWithSub
+      <AsideMenuItem 
+        to='/crafted/pages/wizards' 
+        title='Candidates' 
+        icon='user' 
+        fontIcon='bi-app-indicator'
+        />
+        
+      {/* <AsideMenuItemWithSub
         to='/crafted/accounts'
         title='Accounts'
         icon='profile-circle'
@@ -93,7 +85,7 @@ export function AsideMenuMain() {
         icon='shield-tick'
         title='User management'
         fontIcon='bi-layers'
-      />
+      /> */}
     </>
   )
 }

@@ -27,8 +27,8 @@ export interface UserEmailSettingsModel {
     newMembershipApproval?: boolean
     memberRegistration?: boolean
   }
-  updatesFromKeenthemes?: {
-    newsAboutKeenthemesProductsAndFeatureUpdates?: boolean
+  updatesFromCapricorn?: {
+    newsAboutCapricornProductsAndFeatureUpdates?: boolean
     tipsOnGettingMoreOutOfKeen?: boolean
     thingsYouMissedSindeYouLastLoggedIntoKeen?: boolean
     newsAboutStartOnPartnerProductsAndOtherServices?: boolean
@@ -58,7 +58,7 @@ export interface UserModel {
   pic?: string
   language?: 'en' | 'de' | 'es' | 'fr' | 'ja' | 'zh' | 'ru'
   timeZone?: string
-  website?: 'https://keenthemes.com'
+  website?: 'https://Capricorn.com'
   emailSettings?: UserEmailSettingsModel
   auth?: AuthModel
   communication?: UserCommunicationModel

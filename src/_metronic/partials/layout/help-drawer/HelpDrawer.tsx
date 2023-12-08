@@ -53,8 +53,8 @@ const HelpDrawer = () => {
               {/* begin::Heading */}
               <h2 className='fw-bolder mb-5'>
                 Support at{' '}
-                <a href='https://devs.keenthemes.com' className=''>
-                  devs.keenthemes.com
+                <a href='https://devs.Capricorn.com' className=''>
+                  devs.Capricorn.com
                 </a>
               </h2>
               {/* end::Heading */}
@@ -64,7 +64,7 @@ const HelpDrawer = () => {
                 <span className='text-gray-500'>
                   Join our developers community to find answer to your question and help others.
                 </span>
-                <a className='explore-link d-none' href='https://keenthemes.com/licensing'>
+                <a className='explore-link d-none' href='https://Capricorn.com/licensing'>
                   FAQs
                 </a>
               </div>
@@ -72,7 +72,7 @@ const HelpDrawer = () => {
 
               {/* begin::Link */}
               <a
-                href='https://devs.keenthemes.com'
+                href='https://devs.Capricorn.com'
                 className='btn btn-lg explore-btn-primary w-100'
               >
                 Get Support
@@ -94,7 +94,7 @@ const HelpDrawer = () => {
                 <div className='d-flex flex-column me-2 me-lg-5'>
                   {/* begin::Title */}
                   <a
-                    href='https://preview.keenthemes.com/metronic8/react/docs/docs/quick-start'
+                    href='https://preview.Capricorn.com/metronic8/react/docs/docs/quick-start'
                     className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
                   >
                     Documentation &amp; Videos
@@ -125,7 +125,7 @@ const HelpDrawer = () => {
                 <div className='d-flex flex-column me-2 me-lg-5'>
                   {/* begin::Title */}
                   <a
-                    href='https://preview.keenthemes.com/metronic8/react/docs/docs/utilities'
+                    href='https://preview.Capricorn.com/metronic8/react/docs/docs/utilities'
                     className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
                   >
                     Plugins &amp; Components
@@ -187,7 +187,7 @@ const HelpDrawer = () => {
                 <div className='d-flex flex-column me-2 me-lg-5'>
                   {/* begin::Title */}
                   <a
-                    href='https://preview.keenthemes.com/metronic8/react/docs/docs/changelog'
+                    href='https://preview.Capricorn.com/metronic8/react/docs/docs/changelog'
                     className='text-dark text-hover-primary fw-bolder fs-6 fs-lg-4 mb-1'
                   >
                     What's New

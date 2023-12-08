@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Metronic React Demo 7" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"
-    />
-    <title>Metronic Theme | Keenthemes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <title>Metronic Theme | Capricorn</title>
     <link rel="shortcut icon" href="%PUBLIC_URL%/media/logos/favicon.ico" />
     <link rel="stylesheet" id="layout-styles-anchor" href="%PUBLIC_URL%/splash-screen.css" />
   </head>
@@ -18,17 +15,17 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!--begin::Theme mode setup on page load-->
     <script>
-      let themeMode = 'system'
+      let themeMode = "system";
 
-      if (localStorage.getItem('kt_theme_mode_value')) {
-        themeMode = localStorage.getItem('kt_theme_mode_value')
+      if (localStorage.getItem("kt_theme_mode_value")) {
+        themeMode = localStorage.getItem("kt_theme_mode_value");
       }
 
-      if (themeMode === 'system') {
-        themeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      if (themeMode === "system") {
+        themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       }
 
-      document.documentElement.setAttribute('data-bs-theme', themeMode)
+      document.documentElement.setAttribute("data-bs-theme", themeMode);
     </script>
     <!--end::Theme mode setup on page load-->
 
@@ -36,16 +33,8 @@
 
     <!--begin::Loading markup-->
     <div id="splash-screen" class="splash-screen">
-      <img
-        src="%PUBLIC_URL%/media/logos/default-dark.svg"
-        class="dark-logo"
-        alt="Metronic dark logo"
-      />
-      <img
-        src="%PUBLIC_URL%/media/logos/default.svg"
-        class="light-logo"
-        alt="Metronic light logo"
-      />
+      <img src="%PUBLIC_URL%/media/logos/default-dark.svg" class="dark-logo" alt="Metronic dark logo" />
+      <img src="%PUBLIC_URL%/media/logos/default.svg" class="light-logo" alt="Metronic light logo" />
       <span>Loading ...</span>
     </div>
     <!--end::Loading markup-->

@@ -5,36 +5,36 @@ import {Dispatch, FC, SetStateAction} from 'react'
 import {KTIcon} from '../../../helpers'
 
 const tabs: ReadonlyArray<{link: string; icon: string; tooltip: string}> = [
-  {
-    link: 'projects',
-    icon: 'element-11',
-    tooltip: 'Projects',
-  },
+  // {
+  //   link: 'projects',
+  //   icon: 'element-11',
+  //   tooltip: 'Projects',
+  // },
   {
     link: 'menu',
     icon: 'briefcase',
     tooltip: 'Menu',
   },
-  {
-    link: 'subscription',
-    icon: 'chart-simple',
-    tooltip: 'Subscription',
-  },
-  {
-    link: 'tasks',
-    icon: 'shield-tick',
-    tooltip: 'Tasks',
-  },
-  {
-    link: 'notifications',
-    icon: 'abstract-26',
-    tooltip: 'Notifications',
-  },
-  {
-    link: 'authors',
-    icon: 'add-files',
-    tooltip: 'Authors',
-  },
+  // {
+  //   link: 'subscription',
+  //   icon: 'chart-simple',
+  //   tooltip: 'Subscription',
+  // },
+  // {
+  //   link: 'tasks',
+  //   icon: 'shield-tick',
+  //   tooltip: 'Tasks',
+  // },
+  // {
+  //   link: 'notifications',
+  //   icon: 'abstract-26',
+  //   tooltip: 'Notifications',
+  // },
+  // {
+  //   link: 'authors',
+  //   icon: 'add-files',
+  //   tooltip: 'Authors',
+  // },
 ]
 
 type Props = {

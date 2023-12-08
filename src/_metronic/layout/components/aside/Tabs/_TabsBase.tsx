@@ -4,7 +4,7 @@ import {KTIcon} from '../../../../helpers'
 import {AuthorsTab} from './AuthorsTab'
 import {MenuTab} from './MenuTab'
 import {NotificationsTab} from './NotificationsTab'
-import {ProjectsTab} from './ProjectsTab'
+// import {ProjectsTab} from './ProjectsTab'
 import {SubscriptionsTab} from './SubscriptionsTab'
 import {TasksTab} from './TasksTab'
 
@@ -14,10 +14,10 @@ type Props = {
 
 const SelectedTab: FC<Props> = ({link}) => {
   switch (link) {
-    case 'projects':
-      return <ProjectsTab />
     case 'menu':
       return <MenuTab />
+    // case 'projects':
+    //   return <ProjectsTab />
     case 'subscription':
       return <SubscriptionsTab />
     case 'tasks':
@@ -27,7 +27,7 @@ const SelectedTab: FC<Props> = ({link}) => {
     case 'authors':
       return <AuthorsTab />
     default:
-      return <ProjectsTab />
+      return <MenuTab />
   }
 }
 
