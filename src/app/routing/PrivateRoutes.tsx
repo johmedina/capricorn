@@ -7,6 +7,7 @@ import {MenuTestPage} from '../pages/MenuTestPage'
 import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {WithChildren} from '../../_metronic/helpers'
 import BuilderPageWrapper from '../pages/layout-builder/BuilderPageWrapper'
+import { Projects2 } from '../modules/profile/components/Projects2'
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
@@ -28,6 +29,14 @@ const PrivateRoutes = () => {
         {/* Lazy Modules */}
         <Route
           path='crafted/pages/profile/*'
+          element={
+            <SuspensedView>
+              <Projects2 />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='crafted/pages/profile/pages2'
           element={
             <SuspensedView>
               <ProfilePage />

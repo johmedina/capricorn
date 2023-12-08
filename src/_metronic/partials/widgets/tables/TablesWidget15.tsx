@@ -9,12 +9,12 @@ type Props = {
 
 const table_rows = [
   {
-    title: "Software Engineer",
+    title: "Senior Software Engineer",
     date: "11/11/2022",
     skills: ["Python", "OpenAI", "PHP"],
     status: "In Progress",
     iconStatus: "warning",
-    numCandidates: "4 candidates"
+    numCandidates: "5 candidates"
   },
   {
     title: "Research Associate",
@@ -117,7 +117,7 @@ const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
                     <td className='text-end'></td>
                     <td className='text-end'>
                       <a
-                        href='#'
+                        href='crafted/pages/profile/projects2'
                         className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary'
                       >
                         <KTIcon iconName='arrow-right' className='fs-2' />

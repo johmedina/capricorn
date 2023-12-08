@@ -13,7 +13,8 @@ type Props = {
   title: string
   description: string
   date: string
-  budget: string
+  topSkill?: string
+  budget?: string
   progress: number
   users?: Array<IconUserModel>
 }
@@ -26,18 +27,19 @@ const Card2: FC<Props> = ({
   title,
   description,
   date,
-  budget,
+  topSkill,
+  budget, 
   progress,
   users = undefined,
 }) => {
   return (
     <Link
-      to='/crafted/pages/profile/overview'
+      to='/crafted/account/overview'
       className='card border border-2 border-gray-300 border-hover'
     >
       <div className='card-header border-0 pt-9'>
         <div className='card-title m-0'>
-          <div className='symbol symbol-50px w-50px bg-light'>
+          <div className='symbol symbol-100px w-100px bg-light'>
             <img src={toAbsoluteUrl(icon)} alt='card2' className='p-3' />
           </div>
         </div>
@@ -56,21 +58,22 @@ const Card2: FC<Props> = ({
 
         <div className='d-flex flex-wrap mb-5'>
           <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-7 mb-3'>
+            <div className='fw-bold text-gray-400'>Evaluation Date</div>
             <div className='fs-6 text-gray-800 fw-bolder'>{date}</div>
-            <div className='fw-bold text-gray-400'>Due Date</div>
           </div>
 
           <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 mb-3'>
-            <div className='fs-6 text-gray-800 fw-bolder'>{budget}</div>
-            <div className='fw-bold text-gray-400'>Budget</div>
+            <div className='fw-bold text-gray-400'>Top Skill</div>
+            <div className='fs-6 text-gray-800 fw-bolder'>{topSkill}</div>
           </div>
         </div>
-
+        <div className='fw-bold text-gray-400 text-center'>{progress}%</div>
         <div
           className='h-4px w-100 bg-light mb-5'
           data-bs-toggle='tooltip'
           title='This project completed'
         >
+          
           <div
             className={`bg-${statusColor} rounded h-4px`}
             role='progressbar'
@@ -78,7 +81,7 @@ const Card2: FC<Props> = ({
           ></div>
         </div>
 
-        <UsersList users={users} />
+        {/* <UsersList users={users} /> */}
       </div>
     </Link>
   )
