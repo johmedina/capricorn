@@ -33,7 +33,7 @@ const AsideMenu: React.FC<Props> = ({asideMenuCSSClasses}) => {
         id='#kt_aside_menu'
         data-kt-menu='true'
       >
-        <AsideMenuMain />
+        {/* <AsideMenuMain /> */}
       </div>
     </div>
   )

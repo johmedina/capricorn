@@ -24,9 +24,9 @@ const MasterLayout = () => {
       <div className='d-flex flex-column flex-root'>
         {/* begin::Page */}
         <div className='page d-flex flex-row flex-column-fluid'>
-          <AsideDefault />
+          {/* <AsideDefault /> */}
           {/* begin::Wrapper */}
-          <div className='wrapper d-flex flex-column flex-row-fluid' id='kt_wrapper'>
+          <div className='d-flex flex-column flex-row-fluid' id='kt_wrapper'>
             <HeaderWrapper />
 
             {/* begin::Content */}
