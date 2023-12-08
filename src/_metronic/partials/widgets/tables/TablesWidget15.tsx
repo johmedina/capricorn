@@ -3,26 +3,57 @@ import React from 'react'
 import {KTIcon, toAbsoluteUrl} from '../../../helpers'
 
 type Props = {
-  className: string
+  className: string,
+  headerName?: string
 }
 
-const TablesWidget14: React.FC<Props> = ({className}) => {
+const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
   return (
     <div className={`card ${className}`}>
       {/* begin::Header */}
       <div className='card-header border-0 pt-5'>
         <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bold fs-3 mb-1'>Competitive Analysis</span>
-          <span className='text-muted mt-1 fw-semibold fs-7'>More than 20 other candidates</span>
+          <span className='card-label fw-bold fs-3 mb-1'>{headerName}</span>
+          <span className='text-muted mt-1 fw-semibold fs-7'>More than 400 new products</span>
         </h3>
-        
+        <div className='card-toolbar'>
+          <ul className='nav'>
+            <li className='nav-item'>
+              <a
+                className='nav-link btn btn-sm btn-color-muted btn-active btn-active-light-primary active fw-bold px-4 me-1'
+                data-bs-toggle='tab'
+                href='#kt_table_widget_14_tab_1'
+              >
+                Month
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a
+                className='nav-link btn btn-sm btn-color-muted btn-active btn-active-light-primary fw-bold px-4 me-1'
+                data-bs-toggle='tab'
+                href='#kt_table_widget_14_tab_2'
+              >
+                Week
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a
+                className='nav-link btn btn-sm btn-color-muted btn-active btn-active-light-primary fw-bold px-4'
+                data-bs-toggle='tab'
+                href='#kt_table_widget_14_tab_3'
+              >
+                Day
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       {/* end::Header */}
       {/* begin::Body */}
       <div className='card-body py-3'>
         <div className='tab-content'>
           {/* begin::Tap pane */}
-          <div className='tab-pane fade show active' id='kt_table_widget_5_tab_1'>
+          <div className='tab-pane fade show active' id='kt_table_widget_14_tab_1'>
             {/* begin::Table container */}
             <div className='table-responsive'>
               {/* begin::Table */}
@@ -54,11 +85,11 @@ const TablesWidget14: React.FC<Props> = ({className}) => {
                     </td>
                     <td>
                       <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                        Brad Simmons
+                        Software Engineer
                       </a>
-                      <span className='text-muted fw-semibold d-block'>Movie Creator</span>
+                      <span className='text-muted fw-semibold d-block'>02/12/2023</span>
                     </td>
-                    <td className='text-end text-muted fw-semibold'>React, HTML</td>
+                    <td className='text-end text-muted fw-semibold'>Python, Laravel, Azure</td>
                     <td className='text-end'>
                       <span className='badge badge-light-success'>Approved</span>
                     </td>
@@ -71,7 +102,7 @@ const TablesWidget14: React.FC<Props> = ({className}) => {
                       </a>
                     </td>
                   </tr>
-                  <tr>
+                  {/* <tr>
                     <td>
                       <div className='symbol symbol-45px me-2'>
                         <span className='symbol-label'>
@@ -85,11 +116,11 @@ const TablesWidget14: React.FC<Props> = ({className}) => {
                     </td>
                     <td>
                       <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                        Popular Authors
+                      Senior Software Engineer
                       </a>
-                      <span className='text-muted fw-semibold d-block'>Most Successful</span>
+                      <span className='text-muted fw-semibold d-block'>11/11/2022</span>
                     </td>
-                    <td className='text-end text-muted fw-semibold'>Python, MySQL</td>
+                    <td className='text-end text-muted fw-semibold'>Research, Databases</td>
                     <td className='text-end'>
                       <span className='badge badge-light-warning'>In Progress</span>
                     </td>
@@ -116,9 +147,9 @@ const TablesWidget14: React.FC<Props> = ({className}) => {
                     </td>
                     <td>
                       <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                        New Users
+                        Head of IT
                       </a>
-                      <span className='text-muted fw-semibold d-block'>Awesome Users</span>
+                      <span className='text-muted fw-semibold d-block'>Hardware, Software, Cloud Computing</span>
                     </td>
                     <td className='text-end text-muted fw-semibold'>Laravel,Metronic</td>
                     <td className='text-end'>
@@ -132,69 +163,8 @@ const TablesWidget14: React.FC<Props> = ({className}) => {
                         <KTIcon iconName='arrow-right' className='fs-2' />
                       </a>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className='symbol symbol-45px me-2'>
-                        <span className='symbol-label'>
-                          <img
-                            src={toAbsoluteUrl('/media/svg/brand-logos/bebo.svg')}
-                            className='h-50 align-self-center'
-                            alt=''
-                          />
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                        Active Customers
-                      </a>
-                      <span className='text-muted fw-semibold d-block'>Movie Creator</span>
-                    </td>
-                    <td className='text-end text-muted fw-semibold'>AngularJS, C#</td>
-                    <td className='text-end'>
-                      <span className='badge badge-light-danger'>Rejected</span>
-                    </td>
-                    <td className='text-end'>
-                      <a
-                        href='#'
-                        className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary'
-                      >
-                        <KTIcon iconName='arrow-right' className='fs-2' />
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div className='symbol symbol-45px me-2'>
-                        <span className='symbol-label'>
-                          <img
-                            src={toAbsoluteUrl('/media/svg/brand-logos/kickstarter.svg')}
-                            className='h-50 align-self-center'
-                            alt=''
-                          />
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                        Bestseller Theme
-                      </a>
-                      <span className='text-muted fw-semibold d-block'>Best Customers</span>
-                    </td>
-                    <td className='text-end text-muted fw-semibold'>ReactJS, Ruby</td>
-                    <td className='text-end'>
-                      <span className='badge badge-light-warning'>In Progress</span>
-                    </td>
-                    <td className='text-end'>
-                      <a
-                        href='#'
-                        className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary'
-                      >
-                        <KTIcon iconName='arrow-right' className='fs-2' />
-                      </a>
-                    </td>
-                  </tr>
+                  </tr> */}
+                  
                 </tbody>
                 {/* end::Table body */}
               </table>
@@ -203,7 +173,7 @@ const TablesWidget14: React.FC<Props> = ({className}) => {
           </div>
           {/* end::Tap pane */}
           {/* begin::Tap pane */}
-          <div className='tab-pane fade' id='kt_table_widget_5_tab_2'>
+          <div className='tab-pane fade' id='kt_table_widget_14_tab_2'>
             {/* begin::Table container */}
             <div className='table-responsive'>
               {/* begin::Table */}
@@ -322,7 +292,7 @@ const TablesWidget14: React.FC<Props> = ({className}) => {
           </div>
           {/* end::Tap pane */}
           {/* begin::Tap pane */}
-          <div className='tab-pane fade' id='kt_table_widget_5_tab_3'>
+          <div className='tab-pane fade' id='kt_table_widget_14_tab_3'>
             {/* begin::Table container */}
             <div className='table-responsive'>
               {/* begin::Table */}
@@ -478,6 +448,4 @@ const TablesWidget14: React.FC<Props> = ({className}) => {
   )
 }
 
-export {TablesWidget14}
-
-
+export {TablesWidget15}

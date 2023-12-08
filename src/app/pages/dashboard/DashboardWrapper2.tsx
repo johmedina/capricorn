@@ -3,7 +3,7 @@ import {useIntl} from 'react-intl'
 import {PageLink, PageTitle} from '../../../_metronic/layout/core'
 import {
   TablesWidget5,
-  TablesWidget14,
+  TablesWidget15,
 } from '../../../_metronic/partials/widgets'
 
 const dashboardBreadCrumbs: Array<PageLink> = [
@@ -34,7 +34,7 @@ const DashboardPage = () => {
         </div>
         {/* begin::Col */}
         <div className='col-xxl-12'>
-          <TablesWidget14 className='card-xxl-stretch mb-5 mb-xxl-8' headerName="Current Evaluations"/>
+          <TablesWidget15 className='card-xxl-stretch mb-5 mb-xxl-8' headerName="Current Evaluations"/>
         </div>
         {/* end::Col */}
       </div>
