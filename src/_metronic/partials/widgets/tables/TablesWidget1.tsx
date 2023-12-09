@@ -51,6 +51,45 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
             {/* end::Table head */}
             {/* begin::Table body */}
             <tbody>
+
+            <tr>
+                <th>
+                  <div className='symbol symbol-50px me-2'>
+                    <span className='symbol-label'>
+                      <img
+                        src={toAbsoluteUrl('/media/capricorn/SignalR-logo.png')}
+                        className='h-50 align-self-center'
+                        alt=''
+                      />
+                    </span>
+                  </div>
+                </th>
+                <td>
+                  <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
+                    Python
+                  </a>
+                  {/* <span className='text-muted fw-semibold d-block fs-7'>Best Customers</span> */}
+                </td>
+                <td>
+                  <div className='d-flex flex-column w-100 me-2'>
+                    <div className='d-flex flex-stack mb-2'>
+                      <span className='text-muted me-2 fs-7 fw-semibold'>Master</span>
+                    </div>
+                    <div className='progress h-6px w-100'>
+                      <div
+                        className='progress-bar bg-primary'
+                        role='progressbar'
+                        style={{width: '90%'}}
+                      ></div>
+                    </div>
+                  </div>
+                </td>
+                <td className='text-end'>
+                  <a href='#' className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary'>
+                    <KTIcon iconName='arrow-right' className='fs-2' />
+                  </a>
+                </td>
+              </tr>
               <tr>
                 <th>
                   <div className='symbol symbol-50px me-2'>
@@ -65,18 +104,18 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    Angular
+                  Agile development
                   </a>
                   {/* <span className='text-muted fw-semibold d-block fs-7'>Successful Fellas</span> */}
                 </td>
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
                     <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>70%</span>
+                      <span className='text-muted me-2 fs-7 fw-semibold'>Intermediate</span>
                     </div>
                     <div className='progress h-6px w-100'>
                       <div
-                        className='progress-bar bg-primary'
+                        className='progress-bar bg-warning'
                         role='progressbar'
                         style={{width: '70%'}}
                       ></div>
@@ -103,20 +142,20 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    .Net Core
+                  ⁠Artificial intelligence
                   </a>
                   {/* <span className='text-muted fw-semibold d-block fs-7'>Most Successful</span> */}
                 </td>
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
                     <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>50%</span>
+                      <span className='text-muted me-2 fs-7 fw-semibold'>Beginner</span>
                     </div>
                     <div className='progress h-6px w-100'>
                       <div
-                        className='progress-bar bg-primary'
+                        className='progress-bar bg-danger'
                         role='progressbar'
-                        style={{width: '50%'}}
+                        style={{width: '40%'}}
                       ></div>
                     </div>
                   </div>
@@ -141,58 +180,20 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 </th>
                 <td>
                   <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    C#
+                    Web Development
                   </a>
                   {/* <span className='text-muted fw-semibold d-block fs-7'>Awesome Users</span> */}
                 </td>
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
                     <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>80%</span>
+                      <span className='text-muted me-2 fs-7 fw-semibold'>Expert</span>
                     </div>
                     <div className='progress h-6px w-100'>
                       <div
                         className='progress-bar bg-primary'
                         role='progressbar'
                         style={{width: '80%'}}
-                      ></div>
-                    </div>
-                  </div>
-                </td>
-                <td className='text-end'>
-                  <a href='#' className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary'>
-                    <KTIcon iconName='arrow-right' className='fs-2' />
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <th>
-                  <div className='symbol symbol-50px me-2'>
-                    <span className='symbol-label'>
-                      <img
-                        src={toAbsoluteUrl('/media/capricorn/SignalR-logo.png')}
-                        className='h-50 align-self-center'
-                        alt=''
-                      />
-                    </span>
-                  </div>
-                </th>
-                <td>
-                  <a href='#' className='text-dark fw-bold text-hover-primary mb-1 fs-6'>
-                    SignalR
-                  </a>
-                  {/* <span className='text-muted fw-semibold d-block fs-7'>Best Customers</span> */}
-                </td>
-                <td>
-                  <div className='d-flex flex-column w-100 me-2'>
-                    <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>90%</span>
-                    </div>
-                    <div className='progress h-6px w-100'>
-                      <div
-                        className='progress-bar bg-primary'
-                        role='progressbar'
-                        style={{width: '90%'}}
                       ></div>
                     </div>
                   </div>
@@ -224,13 +225,13 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                 <td>
                   <div className='d-flex flex-column w-100 me-2'>
                     <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>70%</span>
+                      <span className='text-muted me-2 fs-7 fw-semibold'>Intermediate</span>
                     </div>
                     <div className='progress h-6px w-100'>
                       <div
-                        className='progress-bar bg-primary'
+                        className='progress-bar bg-warning'
                         role='progressbar'
-                        style={{width: '70%'}}
+                        style={{width: '60%'}}
                       ></div>
                     </div>
                   </div>
