@@ -2,10 +2,14 @@
 import React from 'react'
 import {KTIcon} from '../../../helpers'
 import {Dropdown1} from '../../content/dropdown/Dropdown1'
+import { interviewdata } from './interviewdata'
+import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
 type Props = {
   className: string
 }
+
+
 
 const ListsWidget5: React.FC<Props> = ({className}) => {
   return (
@@ -13,8 +17,8 @@ const ListsWidget5: React.FC<Props> = ({className}) => {
       {/* begin::Header */}
       <div className='card-header align-items-center border-0 mt-4'>
         <h3 className='card-title align-items-start flex-column'>
-          <span className='fw-bold mb-2 text-dark'>Application Timeline</span>
-          <span className='text-muted fw-semibold fs-7'>Applied: 20 mins ago</span>
+          <span className='fw-bold mb-2 text-dark'>Transcript Analysis</span>
+          <span className='text-muted fw-semibold fs-7'>Interview Chunks</span>
         </h3>
         <div className='card-toolbar'>
           {/* begin::Menu */}
@@ -36,154 +40,45 @@ const ListsWidget5: React.FC<Props> = ({className}) => {
       <div className='card-body pt-5'>
         {/* begin::Timeline */}
         <div className='timeline-label'>
-          {/* begin::Item */}
-          <div className='timeline-item'>
-            {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>08:42</div>
-            {/* end::Label */}
-            {/* begin::Badge */}
-            <div className='timeline-badge'>
-              <i className='fa fa-genderless text-warning fs-1'></i>
-            </div>
-            {/* end::Badge */}
-            {/* begin::Text */}
-            <div className='fw-mormal timeline-content text-muted ps-3'>
-              Outlines keep you honest. And keep structure
-            </div>
-            {/* end::Text */}
-          </div>
-          {/* end::Item */}
-          {/* begin::Item */}
-          <div className='timeline-item'>
-            {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>10:00</div>
-            {/* end::Label */}
-            {/* begin::Badge */}
-            <div className='timeline-badge'>
-              <i className='fa fa-genderless text-success fs-1'></i>
-            </div>
-            {/* end::Badge */}
-            {/* begin::Content */}
-            <div className='timeline-content d-flex'>
-              <span className='fw-bold text-gray-800 ps-3'>AEOL meeting</span>
-            </div>
-            {/* end::Content */}
-          </div>
-          {/* end::Item */}
-          {/* begin::Item */}
-          <div className='timeline-item'>
-            {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>14:37</div>
-            {/* end::Label */}
-            {/* begin::Badge */}
-            <div className='timeline-badge'>
-              <i className='fa fa-genderless text-danger fs-1'></i>
-            </div>
-            {/* end::Badge */}
-            {/* begin::Desc */}
-            <div className='timeline-content fw-bold text-gray-800 ps-3'>
-              Make deposit
-              <a href='#' className='text-primary'>
-                USD 700
-              </a>
-              . to ESL
-            </div>
-            {/* end::Desc */}
-          </div>
-          {/* end::Item */}
-          {/* begin::Item */}
-          <div className='timeline-item'>
-            {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>16:50</div>
-            {/* end::Label */}
-            {/* begin::Badge */}
-            <div className='timeline-badge'>
-              <i className='fa fa-genderless text-primary fs-1'></i>
-            </div>
-            {/* end::Badge */}
-            {/* begin::Text */}
-            <div className='timeline-content fw-mormal text-muted ps-3'>
-              Indulging in poorly driving and keep structure keep great
-            </div>
-            {/* end::Text */}
-          </div>
-          {/* end::Item */}
-          {/* begin::Item */}
-          <div className='timeline-item'>
-            {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>21:03</div>
-            {/* end::Label */}
-            {/* begin::Badge */}
-            <div className='timeline-badge'>
-              <i className='fa fa-genderless text-danger fs-1'></i>
-            </div>
-            {/* end::Badge */}
-            {/* begin::Desc */}
-            <div className='timeline-content fw-semibold text-gray-800 ps-3'>
-              New order placed
-              <a href='#' className='text-primary'>
-                #XF-2356
-              </a>
-              .
-            </div>
-            {/* end::Desc */}
-          </div>
-          {/* end::Item */}
-          {/* begin::Item */}
-          <div className='timeline-item'>
-            {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>16:50</div>
-            {/* end::Label */}
-            {/* begin::Badge */}
-            <div className='timeline-badge'>
-              <i className='fa fa-genderless text-primary fs-1'></i>
-            </div>
-            {/* end::Badge */}
-            {/* begin::Text */}
-            <div className='timeline-content fw-mormal text-muted ps-3'>
-              Indulging in poorly driving and keep structure keep great
-            </div>
-            {/* end::Text */}
-          </div>
-          {/* end::Item */}
-          {/* begin::Item */}
-          <div className='timeline-item'>
-            {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>21:03</div>
-            {/* end::Label */}
-            {/* begin::Badge */}
-            <div className='timeline-badge'>
-              <i className='fa fa-genderless text-danger fs-1'></i>
-            </div>
-            {/* end::Badge */}
-            {/* begin::Desc */}
-            <div className='timeline-content fw-semibold text-gray-800 ps-3'>
-              New order placed
-              <a href='#' className='text-primary'>
-                #XF-2356
-              </a>
-              .
-            </div>
-            {/* end::Desc */}
-          </div>
-          {/* end::Item */}
-          {/* begin::Item */}
-          <div className='timeline-item'>
-            {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>10:30</div>
-            {/* end::Label */}
-            {/* begin::Badge */}
-            <div className='timeline-badge'>
-              <i className='fa fa-genderless text-success fs-1'></i>
-            </div>
-            {/* end::Badge */}
-            {/* begin::Text */}
-            <div className='timeline-content fw-mormal text-muted ps-3'>
-              Finance KPI Mobile app launch preparion meeting
-            </div>
-            {/* end::Text */}
-          </div>
-          {/* end::Item */}
+          {interviewdata.map((chunk, index) => {
+            return(
+              <div className='timeline-item'>
+                {/* begin::Label */}
+                <div className='timeline-label fw-bold text-gray-800 fs-6'>{chunk.time.begin.toFixed(2)}</div>
+                {/* end::Label */}
+                {/* begin::Badge */}
+                <div className='timeline-badge'>
+                  <i className='fa fa-genderless text-success fs-1'></i>
+                </div>
+                {/* end::Badge */}
+                {/* begin::Content */}
+                <div className='timeline-content d-flex'>
+                <OverlayTrigger
+                  placement='top'
+                  overlay={
+                    <Tooltip id={`tooltip-${index}`}>
+                      {Object.keys(chunk.emotions).map((emotion) => {
+                        return(
+                          <div>{emotion}: {chunk.emotions[emotion].toFixed(2)} {"\n"}</div>
+                        )
+                      })}
+                    </Tooltip>
+                  }
+                >
+                  <span className='fw-bold text-gray-800 ps-3'>{chunk.text}</span>
+                </OverlayTrigger>
+                </div>
+                {/* end::Content */}
+              </div>
+            )
+            
+          })}
+          
+           
+
+       
+          
+          
         </div>
         {/* end::Timeline */}
       </div>
