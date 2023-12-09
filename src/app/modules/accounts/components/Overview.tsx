@@ -38,7 +38,7 @@ export function Overview() {
             <label className='col-lg-4 fw-bold text-muted'>Target Role</label>
 
             <div className='col-lg-8 fv-row'>
-              <span className='fw-bold fs-6'>Research Associate</span>
+              <span className='fw-bold fs-6'>Senior Software Engineer</span>
             </div>
           </div>
 

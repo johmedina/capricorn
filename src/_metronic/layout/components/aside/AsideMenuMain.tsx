@@ -33,7 +33,7 @@ export function AsideMenuMain() {
         </AsideMenuItem>
       </AsideMenuItemWithSub>
       <AsideMenuItem 
-        to='/crafted/pages/wizards' 
+        to='/crafted/pages/profile/projects?id=5' 
         title='Candidates' 
         icon='user' 
         fontIcon='bi-app-indicator'

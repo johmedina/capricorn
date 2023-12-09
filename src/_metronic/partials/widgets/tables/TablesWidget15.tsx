@@ -22,7 +22,7 @@ const table_rows = [
     skills: ["Web Development", "Research"],
     status: "New",
     iconStatus: "success",
-    numCandidates: "2 candidates"
+    numCandidates: "0 candidates"
   }
 ]
 const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
@@ -117,7 +117,7 @@ const TablesWidget15: React.FC<Props> = ({className, headerName}) => {
                     <td className='text-end'></td>
                     <td className='text-end'>
                       <a
-                        href='crafted/pages/profile/projects2'
+                        href='crafted/pages/profile/projects2?id=4'
                         className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary'
                       >
                         <KTIcon iconName='arrow-right' className='fs-2' />

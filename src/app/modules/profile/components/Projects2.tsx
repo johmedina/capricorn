@@ -3,8 +3,69 @@ import React from 'react'
 import {Card2} from '../../../../_metronic/partials/content/cards/Card2'
 import {IconUserModel} from '../ProfileModels'
 import { Link } from 'react-router-dom'
+const table_rows = [
+  {
+    icon: '/media/avatars/300-6.jpg',
+    primary: 'primary',
+    status: 'In Process',
+    statusIcon: 'warning',
+    title: 'Emily Johnson',
+    description: 'Qatar University',
+    date: 'November 10, 2023',
+    topSkill: 'Confidence',
+    progress: 70,
+  },
+  {
+    icon: '/media/avatars/300-2.jpg',
+    primary: 'primary',
+    status: 'In Process',
+    statusIcon: 'primary',
+    title: 'Sarah Davis',
+    description: 'Hamad Bin Khalifa University',
+    date: 'November 14, 2023',
+    topSkill: 'Commitment',
+    progress: 95,
+  },
+  {
+    icon: '/media/avatars/300-11.jpg',
+    primary: 'primary',
+    status: 'In Process',
+    statusIcon: 'primary',
+    title: 'David Miller',
+    description: 'Carnegie Mellon University',
+    date: 'November 14, 2023',
+    topSkill: 'Positivity',
+    progress: 90,
+  },
+  {
+    icon: '/media/avatars/300-5.jpg',
+    primary: 'danger',
+    status: 'Rejected',
+    statusIcon: 'danger',
+    title: 'Michael Wilson',
+    description: 'University of Doha for Science and Tech',
+    date: 'November 14, 2023',
+    topSkill: 'Positivity',
+    progress: 45,
+  },
+  {
+    icon: '/media/avatars/300-1.jpg',
+    primary: 'primary',
+    status: 'In Process',
+    statusIcon: 'primary',
+    title: 'Max Smith',
+    description: 'Texas A&M',
+    date: 'November 10, 2023',
+    topSkill: 'Determination',
+    progress: 85,
+  },
+];
 
 export function Projects2() {
+  const queryParams = window.location.href.split('?id=')[1];
+
+  // Get the value of the "id" parameter
+  const numApplicants = parseInt(queryParams, 10);
   return (
     <>
       <div className='d-flex flex-wrap flex-stack mb-6'>
@@ -38,95 +99,27 @@ export function Projects2() {
       </div>
 
       <div className='row g-6 g-xl-9'>
-        <div className='col-md-6 col-xl-4'>
-          <Card2
-            icon='/media/avatars/300-6.jpg'
-            badgeColor='primary'
-            status='In Process'
-            statusColor='warning'
-            title='Emily Johnson'
-            description='Qatar University'
-            date='November 10, 2023'
-            topSkill='Confidence'
-            progress={72}
-            users={users1}
-          />
-        </div>
+        {table_rows.slice(0, numApplicants).map(val => {
+          return(
+            <div className='col-md-6 col-xl-4'>
+            <Card2
+              icon={val.icon} //'/media/avatars/300-6.jpg'
+              badgeColor={val.primary}
+              status={val.status} //'In Process'
+              statusColor={val.statusIcon} //'warning'
+              title={val.title} //'Emily Johnson'
+              description={val.description} //'Qatar University'
+              date={val.date} //'November 10, 2023'
+              topSkill={val.topSkill} //'Confidence'
+              progress={val.progress} // {72}
+              users={users1}
+            />
+          </div>
+          )
+        })
+      }
 
-        <div className='col-md-6 col-xl-4'>
-          <Card2
-            icon='/media/avatars/300-1.jpg'
-            badgeColor='primary'
-            status='In Process'
-            statusColor='primary'
-            title='Max Smith'
-            description='Texas A&M'
-            date='November 10, 2023'
-            topSkill='Determination'
-            progress={85}
-            users={users2}
-          />
-        </div>
-
-        <div className='col-md-6 col-xl-4'>
-          <Card2
-            icon='/media/avatars/300-2.jpg'
-            badgeColor='primary'
-            status='In Process'
-            statusColor='primary'
-            title='Sarah Davis'
-            description='Hamad Bin Khalifa University'
-            date='November 14, 2023'
-            topSkill='Commitment'
-            progress={95}
-            users={users3}
-          />
-        </div>
-
-        <div className='col-md-6 col-xl-4'>
-          <Card2
-            icon='/media/avatars/300-11.jpg'
-            badgeColor='primary'
-            status='In Process'
-            statusColor='primary'
-            title='David Miller'
-            description='Carnegie Mellon University'
-            date='November 14, 2023'
-            topSkill='Positivity'
-            progress={90}
-            users={users4}
-          />
-        </div>
-
-        {/* <div className='col-md-6 col-xl-4'>
-          <Card2
-            icon='/media/avatars/300-4.jpg'
-            badgeColor='primary'
-            status='In Process'
-            statusColor='warning'
-            title='Jennifer Brown'
-            description='Hamad Bin Khalifa University'
-            date='November 14, 2023'
-            topSkill='Determination'
-            progress={68}
-            users={users5}
-          />
-        </div> */}
-
-        <div className='col-md-6 col-xl-4'>
-          <Card2
-            icon='/media/avatars/300-5.jpg'
-            badgeColor='danger'
-            status='Rejected'
-            statusColor='danger'
-            title='Michael Wilson'
-            description='University of Doha for Science and Tech'
-            date='November 14, 2023'
-            topSkill='Positivity'
-            progress={45}
-            users={users6}
-          />
-        </div>
+        
 
        
       </div>
