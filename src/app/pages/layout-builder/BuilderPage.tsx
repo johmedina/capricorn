@@ -64,7 +64,11 @@ const BuilderPage: React.FC = () => {
     setTimeout(() => {
       setLayout(config)
       setConfigLoading(false)
-    }, 1000)
+      if (tab == "Soft Skills"){
+        setTab("Interview Questions")
+      }
+    }, tab == "Soft Skills" ? 3000: 1000)
+    
   }
 
   const reset = () => {
@@ -238,8 +242,9 @@ const BuilderPage: React.FC = () => {
                       className='form-control form-control-lg form-control-solid mb-3 mb-lg-0'
                       placeholder='Enter the full job description which will be used to generate AI-driven interview 
                       questions and metrics for hard and soft skills which will be used to evaluate candidates.'
-                      value={numOfCandidates}
-                    />
+                      value={evaluationPrompt}
+                      onChange={(e) => setEvaluationPrompt(e.target.value)}
+                      />
                   </div>
                 </div>
               </div>
@@ -294,7 +299,8 @@ const BuilderPage: React.FC = () => {
               <div className='col-lg-3'></div>
               <div className='col-lg-9'>
                 <button type='button' onClick={updateConfig} className='btn btn-primary me-2'>
-                  {!configLoading && <span className='indicator-label'>Next</span>}
+                  {!configLoading && tab == "Soft Skills" && <span className='indicator-label'>Submit</span>}
+                  {!configLoading && tab !== "Soft Skills" && <span className='indicator-label'>Next</span>}
                   {configLoading && (
                     <span className='indicator-progress' style={{display: 'block'}}>
                       Please wait...{' '}

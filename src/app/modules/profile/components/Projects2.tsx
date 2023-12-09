@@ -43,12 +43,12 @@ export function Projects2() {
             icon='/media/avatars/300-6.jpg'
             badgeColor='primary'
             status='In Process'
-            statusColor='primary'
+            statusColor='warning'
             title='Emily Johnson'
             description='Qatar University'
-            date='November 10, 2021'
+            date='November 10, 2023'
             topSkill='Confidence'
-            progress={80}
+            progress={72}
             users={users1}
           />
         </div>
@@ -58,12 +58,12 @@ export function Projects2() {
             icon='/media/avatars/300-1.jpg'
             badgeColor='primary'
             status='In Process'
-            statusColor='danger'
+            statusColor='primary'
             title='Max Smith'
             description='Texas A&M'
-            date='May 10, 2021'
+            date='November 10, 2023'
             topSkill='Determination'
-            progress={42}
+            progress={85}
             users={users2}
           />
         </div>
@@ -76,7 +76,7 @@ export function Projects2() {
             statusColor='primary'
             title='Sarah Davis'
             description='Hamad Bin Khalifa University'
-            date='Mar 14, 2021'
+            date='November 14, 2023'
             topSkill='Commitment'
             progress={95}
             users={users3}
@@ -91,7 +91,7 @@ export function Projects2() {
             statusColor='primary'
             title='David Miller'
             description='Carnegie Mellon University'
-            date='Mar 14, 2021'
+            date='November 14, 2023'
             topSkill='Positivity'
             progress={90}
             users={users4}
@@ -106,7 +106,7 @@ export function Projects2() {
             statusColor='warning'
             title='Jennifer Brown'
             description='Hamad Bin Khalifa University'
-            date='Mar 14, 2021'
+            date='November 14, 2023'
             topSkill='Determination'
             progress={68}
             users={users5}
@@ -121,7 +121,7 @@ export function Projects2() {
             statusColor='danger'
             title='Michael Wilson'
             description='University of Doha for Science and Tech'
-            date='Mar 14, 2021'
+            date='November 14, 2023'
             topSkill='Positivity'
             progress={45}
             users={users6}

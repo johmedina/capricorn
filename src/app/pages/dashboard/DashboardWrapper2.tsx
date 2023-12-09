@@ -38,10 +38,10 @@ const DashboardPage = () => {
         </div>
         {/* end::Col */}
         <a
-          href='#'
+          href='/metronic8/react/demo7/builder'
           className='btn btn-l btn-primary'
-          data-bs-toggle='modal'
-          data-bs-target='#kt_modal_offer_a_deal'
+          // data-bs-toggle='modal'
+          // data-bs-target='#kt_modal_offer_a_deal'
         >
           New Evaluation
         </a>
