@@ -27,7 +27,7 @@ const ListsWidget5: React.FC<Props> = ({className}) => {
           >
             <KTIcon iconName='category' className='fs-2' />
           </button>
-          <Dropdown1 />
+          {/* <Dropdown1 /> */}
           {/* end::Menu */}
         </div>
       </div>
