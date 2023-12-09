@@ -14,7 +14,7 @@ export function AsideMenuMain() {
         title={intl.formatMessage({id: 'MENU.DASHBOARD'})}
         fontIcon='bi-app-indicator'
       />
-      <AsideMenuItem to='/builder' icon='switch' title='Layout Builder' fontIcon='bi-layers' />
+      <AsideMenuItem to='/builder' icon='switch' title='Evaluation Builder' fontIcon='bi-layers' />
       <div className='menu-item'>
         <div className='menu-content pt-8 pb-2'>
           <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Crafted</span>
