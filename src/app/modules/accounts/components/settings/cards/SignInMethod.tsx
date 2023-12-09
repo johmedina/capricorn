@@ -1,9 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState} from 'react'
-import {KTIcon} from '../../../../../../_metronic/helpers'
+import {KTIcon, toAbsoluteUrl} from '../../../../../../_metronic/helpers'
 import * as Yup from 'yup'
 import {useFormik} from 'formik'
 import {IUpdateEmail, IUpdatePassword, updateEmail, updatePassword} from '../SettingsModel'
+import {connectedAccounts, IConnectedAccounts} from '../SettingsModel'
+import { useNavigate } from 'react-router-dom'
 
 const emailFormValidationSchema = Yup.object().shape({
   newEmail: Yup.string()
@@ -36,11 +38,13 @@ const passwordFormValidationSchema = Yup.object().shape({
 const SignInMethod: React.FC = () => {
   const [emailUpdateData, setEmailUpdateData] = useState<IUpdateEmail>(updateEmail)
   const [passwordUpdateData, setPasswordUpdateData] = useState<IUpdatePassword>(updatePassword)
-
   const [showEmailForm, setShowEmailForm] = useState<boolean>(false)
+  const [fileUploaded, setFileUploaded] = useState<boolean>(false)
   const [showPasswordForm, setPasswordForm] = useState<boolean>(false)
-
+  const [data, setData] = useState<IConnectedAccounts>(connectedAccounts)
   const [loading1, setLoading1] = useState(false)
+
+  const navigate = useNavigate()
 
   const formik1 = useFormik<IUpdateEmail>({
     initialValues: {
@@ -56,7 +60,10 @@ const SignInMethod: React.FC = () => {
       }, 1000)
     },
   })
-
+  const updateData = (fieldsToUpdate: Partial<IConnectedAccounts>) => {
+    const updatedData = {...data, ...fieldsToUpdate}
+    setData(updatedData)
+  }
   const [loading2, setLoading2] = useState(false)
 
   const formik2 = useFormik<IUpdatePassword>({
@@ -83,7 +90,7 @@ const SignInMethod: React.FC = () => {
         data-bs-target='#kt_account_signin_method'
       >
         <div className='card-title m-0'>
-          <h3 className='fw-bolder m-0'>Sign-in Method</h3>
+          <h3 className='fw-bolder m-0'>Upload Assessment</h3>
         </div>
       </div>
 
@@ -91,8 +98,8 @@ const SignInMethod: React.FC = () => {
         <div className='card-body border-top p-9'>
           <div className='d-flex flex-wrap align-items-center'>
             <div id='kt_signin_email' className={' ' + (showEmailForm && 'd-none')}>
-              <div className='fs-6 fw-bolder mb-1'>Email Address</div>
-              <div className='fw-bold text-gray-600'>support@Capricorn.com</div>
+              <div className='fs-6 fw-bolder mb-1'>Assessment Type</div>
+              <div className='fw-bold text-gray-600'>Audio</div>
             </div>
 
             <div
@@ -105,27 +112,115 @@ const SignInMethod: React.FC = () => {
                 className='form'
                 noValidate
               >
-                <div className='row mb-6'>
+                <div className='row mb-6 '>
                   <div className='col-lg-6 mb-4 mb-lg-0'>
-                    <div className='fv-row mb-0'>
+                    <div className='fv-row mb-10'>
                       <label htmlFor='emailaddress' className='form-label fs-6 fw-bolder mb-3'>
-                        Enter New Email Address
+                        Enter Assessment Type
                       </label>
-                      <input
-                        type='email'
-                        className='form-control form-control-lg form-control-solid'
-                        id='emailaddress'
-                        placeholder='Email Address'
-                        {...formik1.getFieldProps('newEmail')}
-                      />
-                      {formik1.touched.newEmail && formik1.errors.newEmail && (
-                        <div className='fv-plugins-message-container'>
-                          <div className='fv-help-block'>{formik1.errors.newEmail}</div>
-                        </div>
-                      )}
+                      <div className='py-2'>
+            <div className='d-flex flex-stack'>
+              <div className='d-flex'>
+              <img
+                  src={toAbsoluteUrl('/media/svg/brand-logos/video_icon.png')}
+                  className='w-50px me-4'
+                  alt=''
+                />
+                <div className='d-flex flex-column mt-10'>
+                  <a href='#' className='fs-5 text-dark text-hover-primary fw-bolder'>
+                    Video
+                  </a>
+                  <div className='fs-6 fw-bold text-gray-400'>Formats: MP4, WEBM, MOV</div>
+                </div>
+              </div>
+              <div className='d-flex justify-content-end mt-10'>
+                <div className='form-check form-check-solid form-switch'>
+                  <input
+                    className='form-check-input w-45px h-30px'
+                    type='checkbox'
+                    id='googleswitch'
+                    checked={data.google}
+                    onChange={() =>
+                      updateData({
+                        google: !data.google,
+                      })
+                    }
+                  />
+                  <label className='form-check-label' htmlFor='googleswitch'></label>
+                </div>
+              </div>
+            </div>
+
+            <div className='separator separator-dashed my-5'></div>
+
+            <div className='d-flex flex-stack'>
+              <div className='d-flex'>
+              <img
+                  src={toAbsoluteUrl('/media/svg/brand-logos/audio_icon.png')}
+                  className='w-50px me-4'
+                  alt=''
+                />
+                <div className='d-flex flex-column'>
+                  <a href='#' className='fs-5 text-dark text-hover-primary fw-bolder'>
+                    Audio
+                  </a>
+                  <div className='fs-6 fw-bold text-gray-400'>Formats: MP3, WAV</div>
+                </div>
+              </div>
+              <div className='d-flex justify-content-end'>
+                <div className='form-check form-check-solid form-switch'>
+                  <input
+                    className='form-check-input w-45px h-30px'
+                    type='checkbox'
+                    id='githubswitch'
+                    checked={data.github}
+                    onChange={() =>
+                      updateData({
+                        github: !data.github,
+                      })
+                    }
+                  />
+                  <label className='form-check-label' htmlFor='githubswitch'></label>
+                </div>
+              </div>
+            </div>
+
+            <div className='separator separator-dashed my-5'></div>
+
+            <div className='d-flex flex-stack'>
+              <div className='d-flex'>
+              <img
+                  src={toAbsoluteUrl('/media/svg/brand-logos/text_icon.png')}
+                  className='w-50px me-4'
+                  alt=''
+                />
+                <div className='d-flex flex-column'>
+                  <a href='#' className='fs-5 text-dark text-hover-primary fw-bolder'>
+                    Text
+                  </a>
+                  <div className='fs-6 fw-bold text-gray-400'>Formats: TXT, DOCX</div>
+                </div>
+              </div>
+              <div className='d-flex justify-content-end'>
+                <div className='form-check form-check-solid form-switch'>
+                  <input
+                    className='form-check-input w-45px h-30px'
+                    type='checkbox'
+                    checked={data.stack}
+                    onChange={() =>
+                      updateData({
+                        stack: !data.stack,
+                      })
+                    }
+                  />
+                  <label className='form-check-label' htmlFor='slackswitch'></label>
+                </div>
+              </div>
+            </div>
+          </div>
                     </div>
                   </div>
-                  <div className='col-lg-6'>
+                  {/* <div className='col-lg-6'>
                     <div className='fv-row mb-0'>
                       <label
                         htmlFor='confirmemailpassword'
@@ -145,7 +240,7 @@ const SignInMethod: React.FC = () => {
                         </div>
                       )}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div className='d-flex'>
                   <button
@@ -153,7 +248,7 @@ const SignInMethod: React.FC = () => {
                     type='submit'
                     className='btn btn-primary  me-2 px-6'
                   >
-                    {!loading1 && 'Update Email'}
+                    {!loading1 && 'Update Format'}
                     {loading1 && (
                       <span className='indicator-progress' style={{display: 'block'}}>
                         Please wait...{' '}
@@ -182,7 +277,7 @@ const SignInMethod: React.FC = () => {
                 }}
                 className='btn btn-light btn-active-light-primary'
               >
-                Change Email
+                Change Format
               </button>
             </div>
           </div>
@@ -190,10 +285,6 @@ const SignInMethod: React.FC = () => {
           <div className='separator separator-dashed my-6'></div>
 
           <div className='d-flex flex-wrap align-items-center mb-10'>
-            <div id='kt_signin_password' className={' ' + (showPasswordForm && 'd-none')}>
-              <div className='fs-6 fw-bolder mb-1'>Password</div>
-              <div className='fw-bold text-gray-600'>************</div>
-            </div>
 
             <div
               id='kt_signin_password_edit'
@@ -295,40 +386,34 @@ const SignInMethod: React.FC = () => {
                 </div>
               </form>
             </div>
-
-            <div
-              id='kt_signin_password_button'
-              className={'ms-auto ' + (showPasswordForm && 'd-none')}
-            >
-              <button
-                onClick={() => {
-                  setPasswordForm(true)
-                }}
-                className='btn btn-light btn-active-light-primary'
-              >
-                Reset Password
-              </button>
-            </div>
           </div>
 
           <div className='notice d-flex bg-light-primary rounded border-primary border border-dashed p-6'>
             <KTIcon iconName='shield-tick' className='fs-2tx text-primary me-4' />
             <div className='d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap'>
               <div className='mb-3 mb-md-0 fw-bold'>
-                <h4 className='text-gray-800 fw-bolder'>Secure Your Account</h4>
+                <h4 className='text-gray-800 fw-bolder'>Upload the assessment here.</h4>
                 <div className='fs-6 text-gray-600 pe-7'>
-                  Two-factor authentication adds an extra layer of security to your account. To log
-                  in, in addition you'll need to provide a 6 digit code
+                  Make sure that you have informed the candidate that the assessment was recorded. 
                 </div>
               </div>
-              <a
-                href='#'
-                className='btn btn-primary px-6 align-self-center text-nowrap'
-                data-bs-toggle='modal'
-                data-bs-target='#kt_modal_two_factor_authentication'
-              >
-                Enable
-              </a>
+              <label className="btn btn-primary px-6 align-self-center text-nowrap">
+              {!loading1 && <span>Upload</span>}
+                <input type="file" style={{ display: 'none' }} onChange={() => {
+                  setLoading1(true);
+
+                  setTimeout(() => {
+                    setLoading1(false);
+                    navigate("/crafted/account/overview");
+                  }, 3000); // 3 seconds in milliseconds
+                }}/>
+                {loading1 && (
+                <span className='indicator-progress' style={{display: 'block'}}>
+                  Please wait...{' '}
+                  <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
+                </span>
+              )}
+              </label>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import {KTIcon, toAbsoluteUrl} from '../../../helpers'
-import {Dropdown1} from '../../content/dropdown/Dropdown1'
+import { Dropdown4 } from '../../content/dropdown/Dropdown4'
 
 type Props = {
   className: string
@@ -27,7 +27,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
             <KTIcon iconName='category' className='fs-2' />
           </button>
           {/* begin::Menu 1 */}
-          <Dropdown1 />
+          <Dropdown4 />
           {/* end::Menu 1 */}
           {/* end::Menu */}
         </div>
