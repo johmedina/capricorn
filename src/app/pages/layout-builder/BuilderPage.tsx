@@ -3,10 +3,39 @@ import clsx from 'clsx'
 import React, {useState} from 'react'
 import {KTIcon} from '../../../_metronic/helpers'
 import {getLayout, ILayout, LayoutSetup, useLayout} from '../../../_metronic/layout/core'
+import { Step6 } from '../../../_metronic/partials/modals/create-app-stepper/steps/Step6'
+import { ListsWidget10 } from '../../../_metronic/partials/widgets/lists/ListsWidget10'
+
+
+const gptInterviewQuestions = [
+  `1. Can you discuss your experience in designing, developing, and maintaining feature-rich web applications and software systems using Angular 9, .NET CORE, and C# technologies?
+  `,
+  `2. How have you collaborated with cross-functional teams, including UI/UX designers and backend developers, to deliver high-quality and user-friendly applications?
+  `,
+  `3. Can you provide examples of how you have utilized Angular 9 and related technologies (RXJS, TypeScript) to create responsive and intuitive user interfaces that meet high standards of usability and performance?
+  `,
+  `4. Describe your experience in building and optimizing server-side applications using .NET CORE and C#, including API development and integration with various data sources and services.
+  `,
+  `5. Can you explain how you implement data models and interfaces for effective data manipulation and communication between front-end and back-end components?
+  `,
+  `6. Have you developed real-time features using SignalR to enable live updates and interactive user experiences within web applications? If so, can you provide examples?
+  `,
+  `7. How do you approach creating unit tests using TypeScript to ensure the stability and correctness of the codebase? Can you discuss your experience with automated testing practices?
+  `,
+  `8. How do you maintain clear and comprehensive technical documentation for the codebase, APIs, and other components?
+  `,
+  `9. Share your experience with participating in code reviews and performing code refactoring to enhance code maintainability and efficiency.
+  `,
+  `10. Can you discuss your experience in establishing strong relationships with internal and external stakeholders to understand their needs and provide regular updates on project status?
+  `
+]
+
+
+
 
 const BuilderPage: React.FC = () => {
   const {setLayout} = useLayout()
-  const [tab, setTab] = useState('Job Description')
+  const [tab, setTab] = useState('Job Details')
   const [config, setConfig] = useState<ILayout>(getLayout())
   const [configLoading, setConfigLoading] = useState<boolean>(false)
   const [resetLoading, setResetLoading] = useState<boolean>(false)
@@ -90,12 +119,12 @@ const BuilderPage: React.FC = () => {
             <li className='nav-item'>
               <a
                 className={clsx(`nav-link cursor-pointer`, {
-                  active: tab === 'Job Description',
+                  active: tab === 'Job Details',
                 })}
-                onClick={() => setTab('Job Description')}
+                onClick={() => setTab('Job Details')}
                 role='tab'
               >
-                Job Description
+                Job Details
               </a>
             </li>
 
@@ -152,7 +181,7 @@ const BuilderPage: React.FC = () => {
           {/* begin::Body */}
           <div className='card-body'>
             <div className='tab-content pt-3'>
-              <div className={clsx('tab-pane', {active: tab === 'Job Description'})}>
+              <div className={clsx('tab-pane', {active: tab === 'Job Details'})}>
                 <div className='row mb-10'>
                   <label className='col-lg-3 col-form-label text-lg-end'>Role / Position:</label>
                   <div className='col-lg-9 col-xl-4'>
@@ -201,126 +230,58 @@ const BuilderPage: React.FC = () => {
 
               </div>
               <div className={clsx('tab-pane', {active: tab === 'EvaluationPrompt'})}>
-                <div className='row mb-10'>
-                  <label className='col-lg-3 col-form-label text-lg-end'>Display:</label>
+              <div className='row mb-10'>
+                  <label className='col-lg-3 col-form-label text-lg-end'>Full Job Description:</label>
                   <div className='col-lg-9 col-xl-4'>
-                    <div className='form-check form-check-custom form-check-solid form-switch mb-2'>
-                      <input
-                        className='form-check-input'
-                        type='checkbox'
-                        name='layout-builder[layout][pageTitle][display]'
-                        checked={config.pageTitle?.display}
-                        onChange={() =>
-                          updateData({
-                            pageTitle: {
-                              ...config.pageTitle!,
-                              display: !config.pageTitle?.display,
-                            },
-                          })
-                        }
-                      />
-                    </div>
-                    <div className='form-text text-muted'>Display page title</div>
-                  </div>
-                </div>
-                <div className='row mb-10'>
-                  <label className='col-lg-3 col-form-label text-lg-end'>Breadcrumb:</label>
-                  <div className='col-lg-9 col-xl-4'>
-                    <div className='form-check form-check-custom form-check-solid form-switch mb-2'>
-                      <input
-                        className='form-check-input'
-                        type='checkbox'
-                        name='layout-builder[layout][pageTitle][breadCrumbs]'
-                        checked={config.pageTitle?.breadCrumbs}
-                        onChange={() =>
-                          updateData({
-                            pageTitle: {
-                              ...config.pageTitle!,
-                              breadCrumbs: !config.pageTitle?.breadCrumbs,
-                            },
-                          })
-                        }
-                      />
-                    </div>
-                    <div className='form-text text-muted'>Display page title</div>
+                    <textarea
+                      rows={12}
+                      className='form-control form-control-lg form-control-solid mb-3 mb-lg-0'
+                      placeholder='Enter the full job description which will be used to generate AI-driven interview 
+                      questions and metrics for hard and soft skills which will be used to evaluate candidates.'
+                      value={numOfCandidates}
+                    />
                   </div>
                 </div>
               </div>
 
               <div className={clsx('tab-pane', {active: tab === 'Soft Skills'})}>
-                <div className='row mb-10'>
-                  <label className='col-lg-3 col-form-label text-lg-end'>Width:</label>
-                  <div className='col-lg-9 col-xl-4'>
-                    <select
-                      className='form-select form-select-solid'
-                      name='layout-builder[layout][content][width]'
-                      value={config.content.width}
-                      onChange={(e) =>
-                        updateData({
-                          content: {
-                            ...config.content,
-                            width: e.target.value as 'fixed' | 'fluid',
-                          },
-                        })
-                      }
-                    >
-                      <option value='fluid'>Fluid</option>
-                      <option value='fixed'>Fixed</option>
-                    </select>
-                    <div className='form-text text-muted'>Select layout width type.</div>
+                <div className='row mb-10' style={{alignSelf: 'center'}}>
+                  <div className='col-lg-12 ' style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <button className='btn btn-primary text-end mb-5'>
+                        Add Skill
+                    </button>
+                  </div>
+                  <div className='col-lg-3 '></div>
+                  <div className='col-lg-9 '>
+                    <ListsWidget10 />
                   </div>
                 </div>
               </div>
 
               <div className={clsx('tab-pane', {active: tab === 'Hard Skills'})}>
                 <div className='row mb-10'>
-                  <label className='col-lg-3 col-form-label text-lg-end'>Fixed:</label>
-                  <div className='col-lg-9 col-xl-4'>
-                    <div className='switch switch-icon'>
-                      <div className='form-check form-check-custom form-check-solid form-switch mb-2'>
-                        <input
-                          className='form-check-input'
-                          type='checkbox'
-                          name='layout-builder[layout][aside][fixed]'
-                          checked={config.aside.fixed}
-                          onChange={() =>
-                            updateData({
-                              aside: {
-                                ...config.aside,
-                                fixed: !config.aside.fixed,
-                              },
-                            })
-                          }
-                        />
-                      </div>
-                    </div>
-                    <div className='form-text text-muted'>Enable fixed aside</div>
+                  <div className='col-lg-12 ' style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <button className='btn btn-primary text-end mb-5'>
+                        Add Skill
+                    </button>
                   </div>
+                  <Step6 />
                 </div>
               </div>
 
               <div className={clsx('tab-pane', {active: tab === 'Interview Questions'})}>
-                <div className='row mb-10'>
-                  <label className='col-lg-3 col-form-label text-lg-end'>Width:</label>
-                  <div className='col-lg-9 col-xl-4'>
-                    <select
-                      className='form-select form-select-solid'
-                      name='layout-builder[layout][footer][width]'
-                      value={config.footer.width}
-                      onChange={(e) =>
-                        updateData({
-                          footer: {
-                            ...config.footer,
-                            width: e.target.value as 'fixed' | 'fluid',
-                          },
-                        })
-                      }
-                    >
-                      <option value='fluid'>Fluid</option>
-                      <option value='fixed'>Fixed</option>
-                    </select>
-                    <div className='form-text text-muted'>Select layout width type.</div>
+                <div className='row mb-10' style={{height: 400, overflow:'auto'}}>
+                  <div className='col-lg-12 ' style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <button className='btn btn-primary text-end mb-5'>
+                        Regenerate
+                    </button>
                   </div>
+                  {gptInterviewQuestions.map((question, index) => (
+                    <div className='fs-3 mb-2'>
+                      {question}
+                    </div>
+                  ))}
+                  
                 </div>
               </div>
             </div>
@@ -333,7 +294,7 @@ const BuilderPage: React.FC = () => {
               <div className='col-lg-3'></div>
               <div className='col-lg-9'>
                 <button type='button' onClick={updateConfig} className='btn btn-primary me-2'>
-                  {!configLoading && <span className='indicator-label'>Preview</span>}
+                  {!configLoading && <span className='indicator-label'>Next</span>}
                   {configLoading && (
                     <span className='indicator-progress' style={{display: 'block'}}>
                       Please wait...{' '}
