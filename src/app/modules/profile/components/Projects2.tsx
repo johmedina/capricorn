@@ -3,6 +3,7 @@ import React from 'react'
 import {Card2} from '../../../../_metronic/partials/content/cards/Card2'
 import {IconUserModel} from '../ProfileModels'
 import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export function Projects2() {
   return (
@@ -31,8 +32,6 @@ export function Projects2() {
           <Link
             to='/crafted/new-account/new-settings'
             className='btn btn-primary btn-sm'
-            // data-bs-toggle='modal'
-            // data-bs-target='#kt_modal_create_project'
           >
             New Candidate
           </Link>

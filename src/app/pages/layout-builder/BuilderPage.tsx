@@ -6,10 +6,19 @@ import {getLayout, ILayout, LayoutSetup, useLayout} from '../../../_metronic/lay
 
 const BuilderPage: React.FC = () => {
   const {setLayout} = useLayout()
-  const [tab, setTab] = useState('Header')
+  const [tab, setTab] = useState('Job Description')
   const [config, setConfig] = useState<ILayout>(getLayout())
   const [configLoading, setConfigLoading] = useState<boolean>(false)
   const [resetLoading, setResetLoading] = useState<boolean>(false)
+
+  const [role, setRole] = useState("")
+  const [startDate, setStartDate] = useState("")
+  const [endDate, setEndDate] = useState("")
+  const [numOfCandidates, setNumOfCandidates] = useState("")
+  const [evaluationPrompt,setEvaluationPrompt] = useState("")
+  const [hardSkills, setHardSkills] = useState()
+  const [softSkills,setSoftSkills] = useState()
+  const [interviewQuestions, setInterviewQuestions] = useState()
 
   const updateData = (fieldsToUpdate: Partial<ILayout>) => {
     const updatedData = {...config, ...fieldsToUpdate}
@@ -60,14 +69,14 @@ const BuilderPage: React.FC = () => {
           {/* begin::Description */}
           <div className='ms-6'>
             <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
-              The layout builder is to assist your set and configure your preferred project layout
-              specifications and preview it in real-time.
+              The evluation builder is to assist your hiring process and configure your interview 
+              specifications with the help of Capricorn which uses Generative AI.
             </p>
-            <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
+            {/* <p className='list-unstyled text-gray-600 fw-bold fs-6 p-0 m-0'>
               Also, you can configurate the Layout in the code (
               <code>src/_metronic/layout/core/DefaultLayoutConfig.ts</code> file). Don't forget
               clear your local storage when you are changing DefaultLayoutConfig.
-            </p>
+            </p> */}
           </div>
           {/* end::Description */}
         </div>
@@ -81,57 +90,57 @@ const BuilderPage: React.FC = () => {
             <li className='nav-item'>
               <a
                 className={clsx(`nav-link cursor-pointer`, {
-                  active: tab === 'Header',
+                  active: tab === 'Job Description',
                 })}
-                onClick={() => setTab('Header')}
+                onClick={() => setTab('Job Description')}
                 role='tab'
               >
-                Header
+                Job Description
               </a>
             </li>
 
             <li className='nav-item'>
               <a
                 className={clsx(`nav-link cursor-pointer`, {
-                  active: tab === 'PageTitle',
+                  active: tab === 'EvaluationPrompt',
                 })}
-                onClick={() => setTab('PageTitle')}
+                onClick={() => setTab('EvaluationPrompt')}
                 role='tab'
               >
-                Page Title
+                Evaluation Prompt
               </a>
             </li>
             <li className='nav-item'>
               <a
                 className={clsx(`nav-link cursor-pointer`, {
-                  active: tab === 'Aside',
+                  active: tab === 'Hard Skills',
                 })}
-                onClick={() => setTab('Aside')}
+                onClick={() => setTab('Hard Skills')}
                 role='tab'
               >
-                Aside
+                Hard Skills
               </a>
             </li>
             <li className='nav-item'>
               <a
                 className={clsx(`nav-link cursor-pointer`, {
-                  active: tab === 'Content',
+                  active: tab === 'Soft Skills',
                 })}
-                onClick={() => setTab('Content')}
+                onClick={() => setTab('Soft Skills')}
                 role='tab'
               >
-                Content
+                Soft Skills
               </a>
             </li>
             <li className='nav-item'>
               <a
                 className={clsx(`nav-link cursor-pointer`, {
-                  active: tab === 'Footer',
+                  active: tab === 'Interview Questions',
                 })}
-                onClick={() => setTab('Footer')}
+                onClick={() => setTab('Interview Questions')}
                 role='tab'
               >
-                Footer
+                Interview Questions
               </a>
             </li>
           </ul>
@@ -143,78 +152,55 @@ const BuilderPage: React.FC = () => {
           {/* begin::Body */}
           <div className='card-body'>
             <div className='tab-content pt-3'>
-              <div className={clsx('tab-pane', {active: tab === 'Header'})}>
+              <div className={clsx('tab-pane', {active: tab === 'Job Description'})}>
                 <div className='row mb-10'>
-                  <label className='col-lg-3 col-form-label text-lg-end'>Fixed Header:</label>
+                  <label className='col-lg-3 col-form-label text-lg-end'>Role / Position:</label>
                   <div className='col-lg-9 col-xl-4'>
-                    <label className='form-check form-check-custom form-check-solid form-switch mb-5'>
-                      <input
-                        className='form-check-input'
-                        type='checkbox'
-                        name='layout-builder[layout][header][fixed][desktop]'
-                        checked={config.header.fixed.desktop}
-                        onChange={() =>
-                          updateData({
-                            header: {
-                              ...config.header,
-                              fixed: {
-                                ...config.header.fixed,
-                                desktop: !config.header.fixed.desktop,
-                              },
-                            },
-                          })
-                        }
-                      />
-                      <span className='form-check-label text-muted'>Desktop</span>
-                    </label>
-
-                    <label className='form-check form-check-custom form-check-solid form-switch mb-3'>
-                      <input
-                        className='form-check-input'
-                        type='checkbox'
-                        checked={config.header.fixed.tabletAndMobile}
-                        onChange={() =>
-                          updateData({
-                            header: {
-                              ...config.header,
-                              fixed: {
-                                ...config.header.fixed,
-                                tabletAndMobile: !config.header.fixed.tabletAndMobile,
-                              },
-                            },
-                          })
-                        }
-                      />
-                      <span className='form-check-label text-muted'>Tablet & Mobile</span>
-                    </label>
-
-                    <div className='form-text text-muted'>Enable fixed header</div>
+                    <input
+                      type='text'
+                      className='form-control form-control-lg form-control-solid mb-3 mb-lg-0'
+                      placeholder='Enter open position / role'
+                      value={role}
+                    />
                   </div>
                 </div>
+
                 <div className='row mb-10'>
-                  <label className='col-lg-3 col-form-label text-lg-end'>Width:</label>
+                  <label className='col-lg-3 col-form-label text-lg-end'>Starting date:</label>
                   <div className='col-lg-9 col-xl-4'>
-                    <select
-                      className='form-select form-select-solid'
-                      name='layout-builder[layout][header][width]'
-                      value={config.header.width}
-                      onChange={(e) =>
-                        updateData({
-                          header: {
-                            ...config.header,
-                            width: e.target.value as 'fixed' | 'fluid',
-                          },
-                        })
-                      }
-                    >
-                      <option value='fluid'>Fluid</option>
-                      <option value='fixed'>Fixed</option>
-                    </select>
-                    <div className='form-text text-muted'>Select header width type.</div>
+                    <input
+                      type='date'
+                      className='form-control form-control-lg form-control-solid mb-3 mb-lg-0'
+                      value={startDate}
+                    />
                   </div>
                 </div>
+
+                <div className='row mb-10'>
+                  <label className='col-lg-3 col-form-label text-lg-end'>End date:</label>
+                  <div className='col-lg-9 col-xl-4'>
+                    <input
+                      type='date'
+                      className='form-control form-control-lg form-control-solid mb-3 mb-lg-0'
+                      value={endDate}
+                    />
+                  </div>
+                </div>
+
+                <div className='row mb-10'>
+                  <label className='col-lg-3 col-form-label text-lg-end'>Candidate threshold:</label>
+                  <div className='col-lg-9 col-xl-4'>
+                    <input
+                      type='text'
+                      className='form-control form-control-lg form-control-solid mb-3 mb-lg-0'
+                      placeholder='Maximum number of candidates to screen'
+                      value={numOfCandidates}
+                    />
+                  </div>
+                </div>
+
               </div>
-              <div className={clsx('tab-pane', {active: tab === 'PageTitle'})}>
+              <div className={clsx('tab-pane', {active: tab === 'EvaluationPrompt'})}>
                 <div className='row mb-10'>
                   <label className='col-lg-3 col-form-label text-lg-end'>Display:</label>
                   <div className='col-lg-9 col-xl-4'>
@@ -261,7 +247,7 @@ const BuilderPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className={clsx('tab-pane', {active: tab === 'Content'})}>
+              <div className={clsx('tab-pane', {active: tab === 'Soft Skills'})}>
                 <div className='row mb-10'>
                   <label className='col-lg-3 col-form-label text-lg-end'>Width:</label>
                   <div className='col-lg-9 col-xl-4'>
@@ -286,7 +272,7 @@ const BuilderPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className={clsx('tab-pane', {active: tab === 'Aside'})}>
+              <div className={clsx('tab-pane', {active: tab === 'Hard Skills'})}>
                 <div className='row mb-10'>
                   <label className='col-lg-3 col-form-label text-lg-end'>Fixed:</label>
                   <div className='col-lg-9 col-xl-4'>
@@ -313,7 +299,7 @@ const BuilderPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className={clsx('tab-pane', {active: tab === 'Footer'})}>
+              <div className={clsx('tab-pane', {active: tab === 'Interview Questions'})}>
                 <div className='row mb-10'>
                   <label className='col-lg-3 col-form-label text-lg-end'>Width:</label>
                   <div className='col-lg-9 col-xl-4'>

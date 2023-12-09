@@ -14,6 +14,8 @@ export interface IProfileDetails {
     phone: boolean
   }
   allowMarketing: boolean
+  targetRole?: string
+  linkedInProfile?: string
 }
 
 export interface IUpdateEmail {
