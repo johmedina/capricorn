@@ -48,10 +48,9 @@ const DeactivateAccount: React.FC = () => {
 
               <div className='d-flex flex-stack flex-grow-1'>
                 <div className='fw-bold'>
-                  <h4 className='text-gray-800 fw-bolder'>You Are Deactivating Your Account</h4>
+                  <h4 className='text-gray-800 fw-bolder'>You are deactivating this account</h4>
                   <div className='fs-6 text-gray-600'>
-                    For extra security, this requires you to confirm your email or phone number when
-                    you reset yousignr password.
+                    For extra security, this requires you to confirm the email or phone number.
                     <br />
                     <a className='fw-bolder' href='#'>
                       Learn more
@@ -68,7 +67,7 @@ const DeactivateAccount: React.FC = () => {
                 {...formik.getFieldProps('confirm')}
               />
               <label className='form-check-label fw-bold ps-2 fs-6' htmlFor='deactivate'>
-                I confirm my account deactivation
+                I confirm this account deactivation
               </label>
             </div>
             {formik.touched.confirm && formik.errors.confirm && (

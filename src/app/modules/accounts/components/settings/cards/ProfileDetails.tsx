@@ -673,7 +673,7 @@ const ProfileDetails: React.FC = () => {
               </div>
             </div>
 
-            <div className='row mb-6'>
+            {/* <div className='row mb-6'>
               <label className='col-lg-4 col-form-label required fw-bold fs-6'>Currency</label>
 
               <div className='col-lg-8 fv-row'>
@@ -696,7 +696,7 @@ const ProfileDetails: React.FC = () => {
                   </div>
                 )}
               </div>
-            </div>
+            </div> */}
 
             <div className='row mb-6'>
               <label className='col-lg-4 col-form-label fw-bold fs-6'>Communication</label>
@@ -738,25 +738,6 @@ const ProfileDetails: React.FC = () => {
                     />
                     <span className='fw-bold ps-2 fs-6'>Phone</span>
                   </label>
-                </div>
-              </div>
-            </div>
-
-            <div className='row mb-0'>
-              <label className='col-lg-4 col-form-label fw-bold fs-6'>Allow Marketing</label>
-
-              <div className='col-lg-8 d-flex align-items-center'>
-                <div className='form-check form-check-solid form-switch fv-row'>
-                  <input
-                    className='form-check-input w-45px h-30px'
-                    type='checkbox'
-                    id='allowmarketing'
-                    defaultChecked={data.allowMarketing}
-                    onChange={() => {
-                      updateData({allowMarketing: !data.allowMarketing})
-                    }}
-                  />
-                  <label className='form-check-label'></label>
                 </div>
               </div>
             </div>

@@ -11,10 +11,10 @@ export function Settings() {
     <>
       <ProfileDetails />
       <SignInMethod />
-      <ConnectedAccounts />
-      <EmailPreferences />
-      <Notifications />
-      <DeactivateAccount />
+      {/* <ConnectedAccounts /> */}
+      {/* <EmailPreferences /> */}
+      {/* <Notifications />
+      <DeactivateAccount /> */}
     </>
   )
 }

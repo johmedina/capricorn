@@ -92,32 +92,7 @@ const AccountHeader: React.FC = () => {
             <div className='d-flex flex-wrap flex-stack'>
               <div className='d-flex flex-column flex-grow-1 pe-8'>
                 <div className='d-flex flex-wrap'>
-                  <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
-                    <div className='d-flex align-items-center'>
-                      <KTIcon iconName='arrow-up' className='fs-3 text-success me-2' />
-                      <div className='fs-2 fw-bolder'>80%</div>
-                    </div>
-
-                    <div className='fw-bold fs-6 text-gray-400'>Confidence</div>
-                  </div>
-
-                  <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
-                    <div className='d-flex align-items-center'>
-                      <KTIcon iconName='arrow-down' className='fs-3 text-danger me-2' />
-                      <div className='fs-2 fw-bolder'>50%</div>
-                    </div>
-
-                    <div className='fw-bold fs-6 text-gray-400'>Enthusiastic</div>
-                  </div>
-
-                  <div className='border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3'>
-                    <div className='d-flex align-items-center'>
-                      <KTIcon iconName='arrow-up' className='fs-3 text-success me-2' />
-                      <div className='fs-2 fw-bolder'>75%</div>
-                    </div>
-
-                    <div className='fw-bold fs-6 text-gray-400'>Positive</div>
-                  </div>
+                  
                 </div>
               </div>
 
