@@ -57,7 +57,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/SignalR-logo.png')}
+                        src={toAbsoluteUrl('/media/capricorn/python.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -95,7 +95,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/angular.png')}
+                        src={toAbsoluteUrl('/media/capricorn/agile.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -133,7 +133,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/netcore.png')}
+                        src={toAbsoluteUrl('/media/capricorn/ao.jpeg')}
                         className='h-50 align-self-center'
                         alt=''
                       />
@@ -171,7 +171,7 @@ const TablesWidget1: React.FC<Props> = ({className}) => {
                   <div className='symbol symbol-50px me-2'>
                     <span className='symbol-label'>
                       <img
-                        src={toAbsoluteUrl('/media/capricorn/csharp.png')}
+                        src={toAbsoluteUrl('/media/capricorn/react.png')}
                         className='h-50 align-self-center'
                         alt=''
                       />

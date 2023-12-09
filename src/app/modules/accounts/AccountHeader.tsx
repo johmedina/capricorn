@@ -84,7 +84,7 @@ const AccountHeader: React.FC = () => {
                   >
                     <i className='bi bi-three-dots fs-3'></i>
                   </button>
-                  <Dropdown1 />
+                  {/* <Dropdown1 /> */}
                 </div>
               </div>
             </div>
@@ -92,7 +92,8 @@ const AccountHeader: React.FC = () => {
             <div className='d-flex flex-wrap flex-stack'>
               <div className='d-flex flex-column flex-grow-1 pe-8'>
                 <div className='d-flex flex-wrap'>
-                  
+                In the transcript, the interviewee discusses their experience working on a project for a government organization. They initially planned to use the waterfall approach but switched to Agile due to time constraints. The interviewee was responsible for backend development using Python and ensuring the efficiency and speed of the system. They faced challenges with changes to the frontend but emphasized the importance of setting clear requirements and boundaries with clients. The interviewee believes that effective communication and mutual understanding are key to successful client relationships.
+
                 </div>
               </div>
 
