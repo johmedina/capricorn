@@ -72,7 +72,7 @@ def new_overall_emotion(chunks_data, emotion_categories):
 
 
 def analyze_video(video_url):
-    client = HumeBatchClient("ur3BtZULiCKxpCON2jv6oCdAhQNREhfxoAzAPGRoMURGQEk8")
+    client = HumeBatchClient("")
 
     urls = [video_url]
     prosody_config = ProsodyConfig()
